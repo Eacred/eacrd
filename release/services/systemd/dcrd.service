@@ -1,0 +1,13 @@
+[Unit]
+Description=Decred Full Node
+
+[Service]
+Type=simple
+User=ecrd
+Group=ecrd
+WorkingDirectory=/var/ecrd
+ExecStart=/opt/decred/bin/ecrd --appdata=/var/ecrd
+Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target
