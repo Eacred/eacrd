@@ -72,7 +72,7 @@ censorship.
 In terms of individual benefits, since ecrd fully validates every block and
 transaction, it provides the highest security and privacy possible when used in
 conjunction with a wallet that also supports directly connecting to it in full
-validation mode, such as [dcrwallet (CLI)](https://github.com/Eacred/ecrwallet)
+validation mode, such as [dcrwallet (CLI)](https://github.com/Eacred/eacrwallet)
 and [Decrediton (GUI)](https://github.com/Eacred/decrediton).
 
 ## Minimum Recommended Specifications (ecrd only)

@@ -131,7 +131,7 @@ certificate into the default system Certificate Authority list.
 **3.2 Wallet**<br />
 
 ecrd was intentionally developed without an integrated wallet for security
-reasons.  Please see [dcrwallet](https://github.com/Eacred/ecrwallet) for more
+reasons.  Please see [dcrwallet](https://github.com/Eacred/eacrwallet) for more
 information.
 
 <a name="Contact" />

@@ -12,7 +12,7 @@ This client provides a robust and easy to use client for interfacing
 with a Decred RPC server that uses a mostly btcd/bitcoin core
 style Decred JSON-RPC API.  This client has been tested with ecrd
 (https://github.com/Eacred/ecrd) and dcrwallet
-(https://github.com/Eacred/ecrwallet).
+(https://github.com/Eacred/eacrwallet).
 
 In addition to the compatible standard HTTP POST JSON-RPC API, ecrd and
 dcrwallet provide a websocket interface that is more efficient than the standard

@@ -17,7 +17,7 @@ import (
 
 	"github.com/Eacred/eacrd/dcrjson"
 	ecrdtypes "github.com/Eacred/eacrd/rpc/jsonrpc/types"
-	wallettypes "github.com/Eacred/ecrwallet/rpc/jsonrpc/types"
+	wallettypes "github.com/Eacred/eacrwallet/rpc/jsonrpc/types"
 )
 
 const (

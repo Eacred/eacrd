@@ -14,10 +14,10 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/dchest/siphash"
 	"github.com/Eacred/eacrd/chaincfg/chainhash"
 	"github.com/Eacred/eacrd/crypto/blake256"
 	"github.com/Eacred/eacrd/wire"
+	"github.com/dchest/siphash"
 )
 
 // modReduceV1 is the reduction method used in version 1 filters and simply
@@ -534,6 +534,37 @@ func FromBytesV2(B uint8, M uint64, d []byte) (*FilterV2, error) {
 		filterData:  filterData,
 	}
 	return &FilterV2{filter: f}, nil
+}
+
+// FromBytesV2 deserializes a version 2 GCS filter from a known B, M, and
+// serialized filter as returned by Bytes().
+func FromBytesV2ToV1(B uint8, M uint64, d []byte) (*FilterV1, error) {
+	if B > 32 {
+		str := fmt.Sprintf("B value of %d is greater than max allowed 32", B)
+		return nil, makeError(ErrBTooBig, str)
+	}
+
+	var n uint64
+	var filterData []byte
+	if len(d) > 0 {
+		var err error
+		n, err = wire.ReadVarInt(bytes.NewReader(d), 0)
+		if err != nil {
+			str := fmt.Sprintf("failed to read number of filter items: %v", err)
+			return nil, makeError(ErrMisserialized, str)
+		}
+		filterData = d[wire.VarIntSerializeSize(n):]
+	}
+
+	f := filter{
+		version:     2,
+		n:           uint32(n),
+		b:           B,
+		modulusNM:   n * M,
+		filterNData: d,
+		filterData:  filterData,
+	}
+	return &FilterV1{filter: f}, nil
 }
 
 // MakeHeaderForFilter makes a filter chain header for a filter, given the

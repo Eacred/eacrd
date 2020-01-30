@@ -15,6 +15,7 @@ import (
 	"github.com/Eacred/eacrd/database"
 	"github.com/Eacred/eacrd/dcrutil"
 	"github.com/Eacred/eacrd/gcs"
+	"github.com/Eacred/eacrd/gcs/blockcf"
 	"github.com/Eacred/eacrd/wire"
 )
 

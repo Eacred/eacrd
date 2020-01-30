@@ -15,7 +15,7 @@ import (
 	"github.com/Eacred/eacrd/dcrutil"
 	chainjson "github.com/Eacred/eacrd/rpc/jsonrpc/types"
 	"github.com/Eacred/eacrd/wire"
-	walletjson "github.com/Eacred/ecrwallet/rpc/jsonrpc/types"
+	walletjson "github.com/Eacred/eacrwallet/rpc/jsonrpc/types"
 )
 
 // SigHashType enumerates the available signature hashing types that the
