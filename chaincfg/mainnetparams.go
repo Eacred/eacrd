@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2016 The btcsuite developers
-// Copyright (c) 2015-2019 The Decred developers
+// Copyright (c) 2015-2019 The Eacred developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -13,16 +13,16 @@ import (
 	"github.com/Eacred/eacrd/wire"
 )
 
-// MainNetParams returns the network parameters for the main Decred network.
+// MainNetParams returns the network parameters for the main Eacred network.
 func MainNetParams() *Params {
-	// mainPowLimit is the highest proof of work value a Decred block can have
+	// mainPowLimit is the highest proof of work value a Eacred block can have
 	// for the main network.  It is the value 2^224 - 1.
 	mainPowLimit := new(big.Int).Sub(new(big.Int).Lsh(bigOne, 224), bigOne)
 
 	// genesisBlock defines the genesis block of the block chain which serves as
 	// the public transaction ledger for the main network.
 	//
-	// The genesis block for Decred mainnet, testnet, and simnet are not
+	// The genesis block for Eacred mainnet, testnet, and simnet are not
 	// evaluated for proof of work. The only values that are ever used elsewhere
 	// in the blockchain from it are:
 	// (1) The genesis block hash is used as the PrevBlock.
@@ -78,8 +78,8 @@ func MainNetParams() *Params {
 		Net:         wire.MainNet,
 		DefaultPort: "9668",
 		// DNSSeeds: []DNSSeed{
-		// 	{"mainnet-seed.decred.mindcry.org", true},
-		// 	{"mainnet-seed.decred.netpurgatory.com", true},
+		// 	{"mainnet-seed.eacred.mindcry.org", true},
+		// 	{"mainnet-seed.eacred.netpurgatory.com", true},
 		// 	{"mainnet-seed.eacred.org", true},
 		// },
 		DNSSeeds: []DNSSeed{
@@ -324,10 +324,10 @@ func MainNetParams() *Params {
 
 		// BIP44 coin type used in the hierarchical deterministic path for
 		// address generation.
-		SLIP0044CoinType: 42, // SLIP0044, Decred
+		SLIP0044CoinType: 42, // SLIP0044, Eacred
 		LegacyCoinType:   20, // for backwards compatibility
 
-		// Decred PoS parameters
+		// Eacred PoS parameters
 		MinimumStakeDiff:        2 * 1e8, // 2 Coin
 		TicketPoolSize:          8192,
 		TicketsPerBlock:         5,
@@ -347,7 +347,7 @@ func MainNetParams() *Params {
 		StakeMajorityMultiplier: 3,
 		StakeMajorityDivisor:    4,
 
-		// Decred organization related parameters
+		// Eacred organization related parameters
 		// Organization address is Dcur2mcGjmENx4DhNqDctW5wJCVyT3Qeqkx
 		OrganizationPkScript:        hexDecode("a914f5916158e3e2c4551c1796708db8367207ed13bb87"),
 		OrganizationPkScriptVersion: 0,

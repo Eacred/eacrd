@@ -11,7 +11,7 @@ import (
 	"github.com/Eacred/eacrd/chaincfg/chainhash"
 )
 
-// MsgGetCFilterV2 implements the Message interface and represents a decred
+// MsgGetCFilterV2 implements the Message interface and represents a eacred
 // getcfilterv2 message.  It is used to request a version 2 committed gcs filter
 // for a given block along with a proof that can be used to prove the filter is
 // committed to by the block header.  Note that the proof is only useful once

@@ -6,11 +6,11 @@ secp256k1
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/Eacred/eacrd/dcrec/secp256k1)
 
 Package dcrec implements elliptic curve cryptography needed for working with
-Decred (secp256k1 only for now). It is designed so that it may be used with the
+Eacred (secp256k1 only for now). It is designed so that it may be used with the
 standard crypto/ecdsa packages provided with go.  A comprehensive suite of test
 is provided to ensure proper functionality.  Package dcrec was originally based
 on work from ThePiachu which is licensed under the same terms as Go, but it has
-signficantly diverged since then.  The Decred developers original is licensed
+signficantly diverged since then.  The Eacred developers original is licensed
 under the liberal ISC license.
 
 Although this package was primarily written for ecrd, it has intentionally been

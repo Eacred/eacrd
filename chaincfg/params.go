@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2016 The btcsuite developers
-// Copyright (c) 2015-2019 The Decred developers
+// Copyright (c) 2015-2019 The Eacred developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -195,8 +195,8 @@ func (d DNSSeed) String() string {
 	return d.Host
 }
 
-// Params defines a Decred network by its parameters.  These parameters may be
-// used by Decred applications to differentiate networks as well as addresses
+// Params defines a Eacred network by its parameters.  These parameters may be
+// used by Eacred applications to differentiate networks as well as addresses
 // and keys for one network from those intended for use on another network.
 type Params struct {
 	// Name defines a human-readable identifier for the network.
@@ -383,12 +383,12 @@ type Params struct {
 	// stake ticket.
 	MinimumStakeDiff int64
 
-	// Ticket pool sizes for Decred PoS. This denotes the number of possible
+	// Ticket pool sizes for Eacred PoS. This denotes the number of possible
 	// buckets/number of different ticket numbers. It is also the number of
 	// possible winner numbers there are.
 	TicketPoolSize uint16
 
-	// Average number of tickets per block for Decred PoS.
+	// Average number of tickets per block for Eacred PoS.
 	TicketsPerBlock uint16
 
 	// Number of blocks for tickets to mature (spendable at TicketMaturity+1).

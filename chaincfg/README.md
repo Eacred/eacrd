@@ -6,11 +6,11 @@ chaincfg
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/Eacred/eacrd/chaincfg)
 
 Package chaincfg defines chain configuration parameters for the four standard
-Decred networks.
+Eacred networks.
 
 Although this package was primarily written for ecrd, it has intentionally been
 designed so it can be used as a standalone package for any projects needing to
-use parameters for the standard Decred networks or for projects needing to
+use parameters for the standard Eacred networks or for projects needing to
 define their own network.
 
 ## Sample Use
@@ -27,7 +27,7 @@ import (
 	"github.com/Eacred/eacrd/chaincfg"
 )
 
-var testnet = flag.Bool("testnet", false, "operate on the testnet Decred network")
+var testnet = flag.Bool("testnet", false, "operate on the testnet Eacred network")
 
 // By default (without -testnet), use mainnet.
 var chainParams = chaincfg.MainNetParams()

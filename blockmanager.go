@@ -1,5 +1,5 @@
 // Copyright (c) 2013-2016 The btcsuite developers
-// Copyright (c) 2015-2019 The Decred developers
+// Copyright (c) 2015-2019 The Eacred developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -73,21 +73,21 @@ type newPeerMsg struct {
 	peer *serverPeer
 }
 
-// blockMsg packages a Decred block message and the peer it came from together
+// blockMsg packages a Eacred block message and the peer it came from together
 // so the block handler has access to that information.
 type blockMsg struct {
 	block *dcrutil.Block
 	peer  *serverPeer
 }
 
-// invMsg packages a Decred inv message and the peer it came from together
+// invMsg packages a Eacred inv message and the peer it came from together
 // so the block handler has access to that information.
 type invMsg struct {
 	inv  *wire.MsgInv
 	peer *serverPeer
 }
 
-// headersMsg packages a Decred headers message and the peer it came from
+// headersMsg packages a Eacred headers message and the peer it came from
 // together so the block handler has access to that information.
 type headersMsg struct {
 	headers *wire.MsgHeaders
@@ -99,7 +99,7 @@ type donePeerMsg struct {
 	peer *serverPeer
 }
 
-// txMsg packages a Decred tx message and the peer it came from together
+// txMsg packages a Eacred tx message and the peer it came from together
 // so the block handler has access to that information.
 type txMsg struct {
 	tx   *dcrutil.Tx
@@ -2185,7 +2185,7 @@ func (b *blockManager) TicketPoolValue() (dcrutil.Amount, error) {
 	return b.cfg.Chain.TicketPoolValue()
 }
 
-// newBlockManager returns a new Decred block manager.
+// newBlockManager returns a new Eacred block manager.
 // Use Start to begin processing asynchronous block and inv updates.
 func newBlockManager(config *blockManagerConfig) (*blockManager, error) {
 	bm := blockManager{

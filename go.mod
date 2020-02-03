@@ -15,6 +15,6 @@ require (
 	github.com/jessevdk/go-flags v1.4.0
 	github.com/jrick/bitset v1.0.0
 	github.com/jrick/logrotate v1.0.0
-	golang.org/x/crypto v0.0.0-20190820162420-60c769a6c586
+	golang.org/x/crypto v0.0.0-20200128174031-69ecbb4d6d5d
 	golang.org/x/sync v0.0.0-20190423024810-112230192c58
 )

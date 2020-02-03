@@ -20,7 +20,7 @@
 
 ### 1. About
 
-ecrd is a full node Decred implementation written in [Go](https://golang.org),
+ecrd is a full node Eacred implementation written in [Go](https://golang.org),
 and is licensed under the [copyfree](http://www.copyfree.org) ISC License.
 
 This software is currently under active development.  It is extremely stable and
@@ -131,7 +131,7 @@ certificate into the default system Certificate Authority list.
 **3.2 Wallet**<br />
 
 ecrd was intentionally developed without an integrated wallet for security
-reasons.  Please see [dcrwallet](https://github.com/Eacred/eacrwallet) for more
+reasons.  Please see [eacrwallet](https://github.com/Eacred/eacrwallet) for more
 information.
 
 <a name="Contact" />
@@ -170,41 +170,41 @@ https://eacred.org/community
 The following versioned modules are provided by ecrd repository:
 
 * [rpcclient/v4](https://github.com/Eacred/eacrd/tree/master/rpcclient) - Implements
-  a robust and easy to use Websocket-enabled Decred JSON-RPC client
+  a robust and easy to use Websocket-enabled Eacred JSON-RPC client
 * [dcrjson/v3](https://github.com/Eacred/eacrd/tree/master/dcrjson) - Provides
-  infrastructure for working with Decred JSON-RPC APIs
+  infrastructure for working with Eacred JSON-RPC APIs
 * [rpc/jsonrpc/types](https://github.com/Eacred/eacrd/tree/master/rpc/jsonrpc/types) -
   Provides concrete types via dcrjson for the chain server JSON-RPC commands,
   return values, and notifications
 * [wire](https://github.com/Eacred/eacrd/tree/master/wire) - Implements the
-  Decred wire protocol
+  Eacred wire protocol
 * [peer/v2](https://github.com/Eacred/eacrd/tree/master/peer) - Provides a common
-  base for creating and managing Decred network peers
+  base for creating and managing Eacred network peers
 * [blockchain/v2](https://github.com/Eacred/eacrd/tree/master/blockchain) -
-  Implements Decred block handling and chain selection rules
+  Implements Eacred block handling and chain selection rules
   * [stake/v2](https://github.com/Eacred/eacrd/tree/master/blockchain/stake) -
     Provides an API for working with stake transactions and other portions
     related to the Proof-of-Stake (PoS) system
   * [standalone](https://github.com/Eacred/eacrd/tree/master/blockchain/standalone) -
-    Provides standalone functions useful for working with the Decred blockchain
+    Provides standalone functions useful for working with the Eacred blockchain
     consensus rules
 * [txscript/v2](https://github.com/Eacred/eacrd/tree/master/txscript) -
-  Implements the Decred transaction scripting language
+  Implements the Eacred transaction scripting language
 * [dcrec](https://github.com/Eacred/eacrd/tree/master/dcrec) - Provides constants
-  for the supported cryptographic signatures supported by Decred scripts
+  for the supported cryptographic signatures supported by Eacred scripts
   * [secp256k1/v2](https://github.com/Eacred/eacrd/tree/master/dcrec/secp256k1) -
     Implements the secp256k1 elliptic curve
   * [edwards/v2](https://github.com/Eacred/eacrd/tree/master/dcrec/edwards) -
     Implements the edwards25519 twisted Edwards curve
 * [database/v2](https://github.com/Eacred/eacrd/tree/master/database) -
-  Provides a database interface for the Decred block chain
+  Provides a database interface for the Eacred block chain
 * [mempool/v3](https://github.com/Eacred/eacrd/tree/master/mempool) - Provides a
-  policy-enforced pool of unmined Decred transactions
+  policy-enforced pool of unmined Eacred transactions
 * [dcrutil/v2](https://github.com/Eacred/eacrd/tree/master/dcrutil) - Provides
-  Decred-specific convenience functions and types
+  Eacred-specific convenience functions and types
 * [chaincfg/v2](https://github.com/Eacred/eacrd/tree/master/chaincfg) - Defines
-  chain configuration parameters for the standard Decred networks and allows
-  callers to define their own custom Decred networks for testing puproses
+  chain configuration parameters for the standard Eacred networks and allows
+  callers to define their own custom Eacred networks for testing puproses
   * [chainhash](https://github.com/Eacred/eacrd/tree/master/chaincfg/chainhash) -
     Provides a generic hash type and associated functions that allows the
     specific hash algorithm to be abstracted
@@ -212,11 +212,11 @@ The following versioned modules are provided by ecrd repository:
   function for creating a new TLS certificate key pair, typically used for
   encrypting RPC and websocket communications
 * [addrmgr](https://github.com/Eacred/eacrd/tree/master/addrmgr) - Provides a
-  concurrency safe Decred network address manager
+  concurrency safe Eacred network address manager
 * [connmgr/v2](https://github.com/Eacred/eacrd/tree/master/connmgr) - Implements
-  a generic Decred network connection manager
+  a generic Eacred network connection manager
 * [hdkeychain/v2](https://github.com/Eacred/eacrd/tree/master/hdkeychain) -
-  Provides an API for working with  Decred hierarchical deterministic extended
+  Provides an API for working with  Eacred hierarchical deterministic extended
   keys
 * [gcs](https://github.com/Eacred/eacrd/tree/master/gcs) - Provides an API for
   building and using Golomb-coded set filters useful for light clients such as

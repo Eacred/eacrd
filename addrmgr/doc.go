@@ -1,15 +1,15 @@
 // Copyright (c) 2014 The btcsuite developers
-// Copyright (c) 2015-2016 The Decred developers
+// Copyright (c) 2015-2016 The Eacred developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
 /*
-Package addrmgr implements concurrency safe Decred address manager.
+Package addrmgr implements concurrency safe Eacred address manager.
 
 Address Manager Overview
 
-In order maintain the peer-to-peer Decred network, there needs to be a source
-of addresses to connect to as nodes come and go.  The Decred protocol provides
+In order maintain the peer-to-peer Eacred network, there needs to be a source
+of addresses to connect to as nodes come and go.  The Eacred protocol provides
 the getaddr and addr messages to allow peers to communicate known addresses
 with each other.  However, there needs to a mechanism to store those results and
 select peers from them.  It is also important to note that remote peers can't

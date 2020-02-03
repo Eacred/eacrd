@@ -5,13 +5,13 @@ dcrjson
 [![ISC License](https://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/Eacred/eacrd/dcrjson)
 
-Package dcrjson implements infrastructure for marshalling to and from the decred
+Package dcrjson implements infrastructure for marshalling to and from the eacred
 JSON-RPC API via concrete types.  A comprehensive suite of tests is provided to
 ensure proper functionality.
 
-Although this package was primarily written for the decred, it has intentionally
+Although this package was primarily written for the eacred, it has intentionally
 been designed so it can be used as a standalone package for any projects needing
-to marshal to and from decred JSON-RPC requests and responses.
+to marshal to and from eacred JSON-RPC requests and responses.
 
 Note that although it's possible to use this package directly to implement an
 RPC client, it is not recommended since it is only intended as an infrastructure

@@ -206,7 +206,7 @@ var rpcHandlersBeforeInit = map[types.Method]commandHandler{
 
 // list of commands that we recognize, but for which ecrd has no support because
 // it lacks support for wallet functionality. For these commands the user
-// should ask a connected instance of dcrwallet.
+// should ask a connected instance of eacrwallet.
 var rpcAskWallet = map[string]struct{}{
 	"abandontransaction":      {},
 	"accountaddressindex":     {},
@@ -451,7 +451,7 @@ func handleUnimplemented(s *rpcServer, cmd interface{}, closeChan <-chan struct{
 
 // handleAskWallet is the handler for commands that are recognized as valid, but
 // are unable to answer correctly since it involves wallet state.
-// These commands will be implemented in dcrwallet.
+// These commands will be implemented in eacrwallet.
 func handleAskWallet(s *rpcServer, cmd interface{}, closeChan <-chan struct{}) (interface{}, error) {
 	return nil, ErrRPCNoWallet
 }

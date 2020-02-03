@@ -1,27 +1,27 @@
 // Copyright (c) 2014 The btcsuite developers
-// Copyright (c) 2016-2017 The Decred developers
+// Copyright (c) 2016-2017 The Eacred developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
 /*
-Package rpcclient implements a websocket-enabled Decred JSON-RPC client.
+Package rpcclient implements a websocket-enabled Eacred JSON-RPC client.
 
 Overview
 
 This client provides a robust and easy to use client for interfacing
-with a Decred RPC server that uses a mostly btcd/bitcoin core
-style Decred JSON-RPC API.  This client has been tested with ecrd
-(https://github.com/Eacred/eacrd) and dcrwallet
+with a Eacred RPC server that uses a mostly btcd/bitcoin core
+style Eacred JSON-RPC API.  This client has been tested with ecrd
+(https://github.com/Eacred/eacrd) and eacrwallet
 (https://github.com/Eacred/eacrwallet).
 
 In addition to the compatible standard HTTP POST JSON-RPC API, ecrd and
-dcrwallet provide a websocket interface that is more efficient than the standard
+eacrwallet provide a websocket interface that is more efficient than the standard
 HTTP POST method of accessing RPC.  The section below discusses the differences
 between HTTP POST and websockets.
 
 By default, this client assumes the RPC server supports websockets and has
 TLS enabled.  In practice, this currently means it assumes you are talking to
-ecrd or dcrwallet by default.  However, configuration options are provided to
+ecrd or eacrwallet by default.  However, configuration options are provided to
 fall back to HTTP POST and disable TLS to support talking with inferior bitcoin
 core style RPC servers.
 
@@ -33,7 +33,7 @@ quite a bit of overhead to every call and lacks flexibility for features such as
 notifications.
 
 In contrast, the websocket-based JSON-RPC interface provided by ecrd and
-dcrwallet only uses a single connection that remains open and allows
+eacrwallet only uses a single connection that remains open and allows
 asynchronous bi-directional communication.
 
 The websocket interface supports all of the same commands as HTTP POST, but they
@@ -105,16 +105,16 @@ Minor RPC Server Differences and Chain/Wallet Separation
 
 Some of the commands are extensions specific to a particular RPC server.  For
 example, the DebugLevel call is an extension only provided by ecrd (and
-dcrwallet passthrough).  Therefore if you call one of these commands against
+eacrwallet passthrough).  Therefore if you call one of these commands against
 an RPC server that doesn't provide them, you will get an unimplemented error
 from the server.  An effort has been made to call out which commands are
 extensions in their documentation.
 
 Also, it is important to realize that ecrd intentionally separates the wallet
-functionality into a separate process named dcrwallet.  This means if you are
+functionality into a separate process named eacrwallet.  This means if you are
 connected to the ecrd RPC server directly, only the RPCs which are related to
 chain services will be available.  Depending on your application, you might only
-need chain-related RPCs.  In contrast, dcrwallet provides pass through treatment
+need chain-related RPCs.  In contrast, eacrwallet provides pass through treatment
 for chain-related RPCs, so it supports them in addition to wallet-related RPCs.
 
 Errors
@@ -168,8 +168,8 @@ The following full-blown client examples are in the examples directory:
    Connects to a ecrd RPC server using TLS-secured websockets, registers for
    block connected and block disconnected notifications, and gets the current
    block count
- - dcrwalletwebsockets
-   Connects to a dcrwallet RPC server using TLS-secured websockets, registers
+ - eacrwalletwebsockets
+   Connects to a eacrwallet RPC server using TLS-secured websockets, registers
    for notifications about changes to account balances, and gets a list of
    unspent transaction outputs (utxos) the wallet can sign
 */

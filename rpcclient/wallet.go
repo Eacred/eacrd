@@ -2823,12 +2823,12 @@ func (c *Client) WalletInfo() (*walletjson.WalletInfoResult, error) {
 }
 
 // TODO(davec): Implement
-// backupwallet (NYI in dcrwallet)
-// encryptwallet (Won't be supported by dcrwallet since it's always encrypted)
-// getwalletinfo (NYI in dcrwallet or dcrjson)
-// listaddressgroupings (NYI in dcrwallet)
-// listreceivedbyaccount (NYI in dcrwallet)
+// backupwallet (NYI in eacrwallet)
+// encryptwallet (Won't be supported by eacrwallet since it's always encrypted)
+// getwalletinfo (NYI in eacrwallet or dcrjson)
+// listaddressgroupings (NYI in eacrwallet)
+// listreceivedbyaccount (NYI in eacrwallet)
 
 // DUMP
-// importwallet (NYI in dcrwallet)
-// dumpwallet (NYI in dcrwallet)
+// importwallet (NYI in eacrwallet)
+// dumpwallet (NYI in eacrwallet)

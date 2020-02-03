@@ -758,7 +758,7 @@ func (mp *TxPool) checkVoteDoubleSpend(vote *dcrutil.Tx) error {
 			// because the votes map is not currently kept in sync with the
 			// contents of the pool.
 			//
-			// TODO(decred): Ideally the votes map and mempool would be kept in
+			// TODO(eacred): Ideally the votes map and mempool would be kept in
 			// sync, which would remove the need for this check, however, there
 			// is currently code outside of mempool that relies on being able to
 			// look up seen votes by block hash, regardless of their current

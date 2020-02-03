@@ -6,7 +6,7 @@ dcrutil
 [![ISC License](https://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/Eacred/eacrd/dcrutil)
 
-Package dcrutil provides decred-specific convenience functions and types.
+Package dcrutil provides eacred-specific convenience functions and types.
 A comprehensive suite of tests is provided to ensure proper functionality.
 
 This package was developed for ecrd, a full-node implementation of Decred which

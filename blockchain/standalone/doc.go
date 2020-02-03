@@ -1,10 +1,10 @@
-// Copyright (c) 2019 The Decred developers
+// Copyright (c) 2019 The Eacred developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
 /*
 Package standalone provides standalone functions useful for working with the
-Decred blockchain consensus rules.
+Eacred blockchain consensus rules.
 
 The primary goal of offering these functions via a separate module is to reduce
 the required dependencies to a minimum as compared to the blockchain module.

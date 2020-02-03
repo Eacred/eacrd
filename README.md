@@ -6,13 +6,13 @@ ecrd
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/Eacred/eacrd)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Eacred/eacrd)](https://goreportcard.com/report/github.com/Eacred/eacrd)
 
-## Decred Overview
+## Eacred Overview
 
-Decred is a blockchain-based cryptocurrency with a strong focus on community
+Eacred is a blockchain-based cryptocurrency with a strong focus on community
 input, open governance, and sustainable funding for development. It utilizes a
 hybrid proof-of-work and proof-of-stake mining system to ensure that a small
-group cannot dominate the flow of transactions or make changes to Decred without
-the input of the community.  A unit of the currency is called a `decred` (DCR).
+group cannot dominate the flow of transactions or make changes to Eacred without
+the input of the community.  A unit of the currency is called a `eacred` (DCR).
 
 https://eacred.org
 
@@ -22,11 +22,11 @@ https://eacred.org/downloads
 
 ## What is ecrd?
 
-ecrd is a full node implementation of Decred written in Go (golang).
+ecrd is a full node implementation of Eacred written in Go (golang).
 
-It acts as a fully-validating chain daemon for the Decred cryptocurrency.  ecrd
-maintains the entire past transactional ledger of Decred and allows relaying of
-transactions to other Decred nodes around the world.
+It acts as a fully-validating chain daemon for the Eacred cryptocurrency.  ecrd
+maintains the entire past transactional ledger of Eacred and allows relaying of
+transactions to other Eacred nodes around the world.
 
 This software is currently under active development.  It is extremely stable and
 has been in production use since February 2016.
@@ -45,17 +45,17 @@ that fully validates all transactions and blocks, as opposed to trusting a 3rd
 party.  In addition to validating transactions and blocks, nearly all full nodes
 also participate in relaying transactions and blocks to other full nodes around
 the world, thus forming the peer-to-peer network that is the backbone of the
-Decred cryptocurrency.
+Eacred cryptocurrency.
 
 The full node distinction is important, since full nodes are not the only type
-of software participating in the Decred peer network. For instance, there are
+of software participating in the Eacred peer network. For instance, there are
 'lightweight nodes' which rely on full nodes to serve the transactions, blocks,
 and cryptographic proofs they require to function, as well as relay their
 transactions to the rest of the global network.
 
 ## Why run ecrd?
 
-As described in the previous section, the Decred cryptocurrency relies on having
+As described in the previous section, the Eacred cryptocurrency relies on having
 a peer-to-peer network of nodes that fully validate all transactions and blocks
 and then relay them to other full nodes.
 
@@ -72,8 +72,8 @@ censorship.
 In terms of individual benefits, since ecrd fully validates every block and
 transaction, it provides the highest security and privacy possible when used in
 conjunction with a wallet that also supports directly connecting to it in full
-validation mode, such as [dcrwallet (CLI)](https://github.com/Eacred/eacrwallet)
-and [Decrediton (GUI)](https://github.com/Eacred/decrediton).
+validation mode, such as [eacrwallet (CLI)](https://github.com/Eacred/eacrwallet)
+and [Eacrediton (GUI)](https://github.com/Eacred/eacrediton).
 
 ## Minimum Recommended Specifications (ecrd only)
 
@@ -142,33 +142,33 @@ PS> & "$(go env GOPATH)\bin\ecrd" -V
 
 ### Running ecrd
 
-You can run a decred node from inside a docker container.  To build the image
+You can run a eacred node from inside a docker container.  To build the image
 yourself, use the following command:
 
 ```
-docker build -t decred/ecrd .
+docker build -t eacred/ecrd .
 ```
 
 Or you can create an alpine based image (requires Docker 17.05 or higher):
 
 ```
-docker build -t decred/ecrd:alpine -f Dockerfile.alpine .
+docker build -t eacred/ecrd:alpine -f Dockerfile.alpine .
 ```
 
 You can then run the image using:
 
 ```
-docker run decred/ecrd
+docker run eacred/ecrd
 ```
 
 You may wish to use an external volume to customise your config and persist the
 data in an external volume:
 
 ```
-docker run --rm -v /home/user/ecrdata:/root/.ecrd/data decred/ecrd
+docker run --rm -v /home/user/ecrdata:/root/.ecrd/data eacred/ecrd
 ```
 
-For a minimal image, you can use the decred/ecrd:alpine tag.  This is typically
+For a minimal image, you can use the eacred/ecrd:alpine tag.  This is typically
 a more secure option while also being a much smaller image.
 
 You can run eacrctl from inside the image.  For example, run an image (mounting
@@ -176,7 +176,7 @@ your data from externally) with:
 
 ```
 docker run --rm -ti --name=ecrd-1 -v /home/user/.ecrd:/root/.ecrd \
-  decred/ecrd:alpine
+  eacred/ecrd:alpine
 ```
 
 And then run eacrctl commands against it.  For example:
@@ -192,7 +192,7 @@ script `run_tests.sh` by specifying either `docker` or `podman` as the first
 parameter.  This script defaults to using the current latest supported version
 of Go, but it also respects the `GOVERSION` environment variable set to the
 major version of Go to allow testing on a previous version of Go.  Generally,
-Decred only supports the current and previous major versions of Go.
+Eacred only supports the current and previous major versions of Go.
 
 ```
 ./run_tests.sh docker

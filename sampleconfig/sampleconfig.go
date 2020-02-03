@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Decred developers
+// Copyright (c) 2017 The Eacred developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -374,8 +374,8 @@ const DcrctlSampleConfig = `[Application Options]
 ; proxyuser=
 ; proxypass=
 
-; Username and password to authenticate connections to a Decred RPC server
-; (usually ecrd or dcrwallet)
+; Username and password to authenticate connections to a Eacred RPC server
+; (usually ecrd or eacrwallet)
 ; rpcuser=
 ; rpcpass=
 

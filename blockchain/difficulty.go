@@ -1,5 +1,5 @@
 // Copyright (c) 2013-2016 The btcsuite developers
-// Copyright (c) 2015-2019 The Decred developers
+// Copyright (c) 2015-2019 The Eacred developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -293,7 +293,7 @@ func mergeDifficulty(oldDiff int64, newDiff1 int64, newDiff2 int64) int64 {
 // for the block after the passed previous block node based on exponentially
 // weighted averages.
 //
-// NOTE: This is the original stake difficulty algorithm that was used at Decred
+// NOTE: This is the original stake difficulty algorithm that was used at Eacred
 // launch.
 //
 // This function MUST be called with the chain state lock held (for writes).
@@ -314,7 +314,7 @@ func (b *BlockChain) calcNextRequiredStakeDifficultyV1(curNode *blockNode) (int6
 	// This is sort of sloppy and coded with the hopes that generally by
 	// stakeDiffStartHeight people will be submitting lots of SStx over the
 	// past nodesToTraverse many nodes. It should be okay with the default
-	// Decred parameters, but might do weird things if you use custom
+	// Eacred parameters, but might do weird things if you use custom
 	// parameters.
 	if curNode == nil ||
 		curNode.height < stakeDiffStartHeight {
@@ -776,7 +776,7 @@ func (b *BlockChain) CalcNextRequiredStakeDifficulty() (int64, error) {
 // remainder of the interval.
 //
 // NOTE: This uses the original stake difficulty algorithm that was used at
-// Decred launch.
+// Eacred launch.
 //
 // This function MUST be called with the chain state lock held (for writes).
 func (b *BlockChain) estimateNextStakeDifficultyV1(curNode *blockNode, ticketsInWindow int64, useMaxTickets bool) (int64, error) {

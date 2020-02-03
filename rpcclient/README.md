@@ -23,15 +23,15 @@ implement and the API is not stable yet.
   Connects to a ecrd RPC server using TLS-secured websockets, registers for
   block connected and block disconnected notifications, and gets the current
   block count
-* [dcrwallet Websockets Example](https://github.com/Eacred/eacrd/tree/master/rpcclient/examples/dcrwalletwebsockets)  
-  Connects to a dcrwallet RPC server using TLS-secured websockets, registers for
+* [eacrwallet Websockets Example](https://github.com/Eacred/eacrd/tree/master/rpcclient/examples/eacrwalletwebsockets)  
+  Connects to a eacrwallet RPC server using TLS-secured websockets, registers for
   notifications about changes to account balances, and gets a list of unspent
   transaction outputs (utxos) the wallet can sign
 
 ## Major Features
 
-* Supports Websockets (ecrd/dcrwallet) and HTTP POST mode (bitcoin core-like)
-* Provides callback and registration functions for ecrd/dcrwallet notifications
+* Supports Websockets (ecrd/eacrwallet) and HTTP POST mode (bitcoin core-like)
+* Provides callback and registration functions for ecrd/eacrwallet notifications
 * Supports ecrd extensions
 * Translates to and from higher-level and easier to use Go types
 * Offers a synchronous (blocking) and asynchronous API

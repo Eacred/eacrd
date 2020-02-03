@@ -1,5 +1,5 @@
 // Copyright (c) 2013, 2014 The btcsuite developers
-// Copyright (c) 2015-2019 The Decred developers
+// Copyright (c) 2015-2019 The Eacred developers
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
@@ -74,7 +74,7 @@ func (p *mockAddrParams) AddrIDScriptHashV0() [2]byte {
 }
 
 // mockMainNetParams returns mock mainnet address parameters to use throughout
-// the tests.  They match the Decred mainnet params as of the time this comment
+// the tests.  They match the Eacred mainnet params as of the time this comment
 // was written.
 func mockMainNetParams() *mockAddrParams {
 	return &mockAddrParams{
@@ -88,7 +88,7 @@ func mockMainNetParams() *mockAddrParams {
 }
 
 // mockTestNetParams returns mock testnet address parameters to use throughout
-// the tests.  They match the Decred mainnet params as of the time this comment
+// the tests.  They match the Eacred mainnet params as of the time this comment
 // was written.
 func mockTestNetParams() *mockAddrParams {
 	return &mockAddrParams{
@@ -102,7 +102,7 @@ func mockTestNetParams() *mockAddrParams {
 }
 
 // mockRegNetParams returns mock regression test address parameters to use
-// throughout the tests.  They match the Decred mainnet params as of the time
+// throughout the tests.  They match the Eacred mainnet params as of the time
 // this comment was written.
 func mockRegNetParams() *mockAddrParams {
 	return &mockAddrParams{
