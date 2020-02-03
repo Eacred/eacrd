@@ -4,6 +4,7 @@ go 1.11
 
 require (
 	github.com/Eacred/base58 v1.0.6
+	github.com/Eacred/eacrwallet v0.0.0-20200203080429-2cb7003d43bf
 	github.com/Eacred/go-socks v1.1.1
 	github.com/Eacred/slog v1.0.1
 	github.com/agl/ed25519 v0.0.0-20170116200512-5312a6153412
