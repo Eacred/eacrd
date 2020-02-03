@@ -75,7 +75,7 @@ func TestNet3Params() *Params {
 		// DNSSeeds: []DNSSeed{
 		// 	{"testnet-seed.decred.mindcry.org", true},
 		// 	{"testnet-seed.decred.netpurgatory.com", true},
-		// 	{"testnet-seed.decred.org", true},
+		// 	{"testnet-seed.eacred.org", true},
 		// },
 		DNSSeeds: []DNSSeed{
 			{"23.91.96.206", true},

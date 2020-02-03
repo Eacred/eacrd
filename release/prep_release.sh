@@ -27,7 +27,7 @@ PROJECT=ecrd
 PROJECT_UC=$(echo $PROJECT | tr '[:lower:]' '[:upper:]')
 SCRIPT=$(basename $0)
 VERFILE=../version.go
-VERFILES="$VERFILE ../cmd/dcrctl/version.go"
+VERFILES="$VERFILE ../cmd/eacrctl/version.go"
 PROJ_CHANGES=../CHANGES
 
 # verify params

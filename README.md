@@ -3,8 +3,8 @@ ecrd
 
 [![Build Status](https://github.com/Eacred/eacrd/workflows/Build%20and%20Test/badge.svg)](https://github.com/Eacred/eacrd/actions)
 [![ISC License](https://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/Eacred/ecrd)
-[![Go Report Card](https://goreportcard.com/badge/github.com/Eacred/ecrd)](https://goreportcard.com/report/github.com/Eacred/ecrd)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/Eacred/eacrd)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Eacred/eacrd)](https://goreportcard.com/report/github.com/Eacred/eacrd)
 
 ## Decred Overview
 
@@ -14,11 +14,11 @@ hybrid proof-of-work and proof-of-stake mining system to ensure that a small
 group cannot dominate the flow of transactions or make changes to Decred without
 the input of the community.  A unit of the currency is called a `decred` (DCR).
 
-https://decred.org
+https://eacred.org
 
 ## Latest Downloads
 
-https://decred.org/downloads
+https://eacred.org/downloads
 
 ## What is ecrd?
 
@@ -102,7 +102,7 @@ Also, make sure your firewall is configured to allow inbound connections to port
 
 Binary releases are provided for common operating systems and architectures:
 
-https://decred.org/downloads
+https://eacred.org/downloads
 
 ### Build from source (all platforms)
 
@@ -131,7 +131,7 @@ the repo's root directory.  Some notes:
 ### Example of obtaining and building from source on Windows 10:
 
 ```PowerShell
-PS> git clone https://github.com/Eacred/ecrd $env:USERPROFILE\src\ecrd
+PS> git clone https://github.com/Eacred/eacrd $env:USERPROFILE\src\ecrd
 PS> cd $env:USERPROFILE\src\ecrd
 PS> go install . .\cmd\...
 PS> & "$(go env GOPATH)\bin\ecrd" -V
@@ -171,7 +171,7 @@ docker run --rm -v /home/user/ecrdata:/root/.ecrd/data decred/ecrd
 For a minimal image, you can use the decred/ecrd:alpine tag.  This is typically
 a more secure option while also being a much smaller image.
 
-You can run dcrctl from inside the image.  For example, run an image (mounting
+You can run eacrctl from inside the image.  For example, run an image (mounting
 your data from externally) with:
 
 ```
@@ -179,10 +179,10 @@ docker run --rm -ti --name=ecrd-1 -v /home/user/.ecrd:/root/.ecrd \
   decred/ecrd:alpine
 ```
 
-And then run dcrctl commands against it.  For example:
+And then run eacrctl commands against it.  For example:
 
 ```
-docker exec -ti ecrd-1 dcrctl getbestblock
+docker exec -ti ecrd-1 eacrctl getbestblock
 ```
 
 ### Running Tests
@@ -214,7 +214,7 @@ GOVERSION=1.11 ./run_tests.sh
 
 If you have any further questions you can find us at:
 
-https://decred.org/community
+https://eacred.org/community
 
 ## Issue Tracker
 

@@ -37,7 +37,7 @@ _testmain.go
 ecrd
 cmd/addblock/addblock
 cmd/checkdevpremine/checkdevpremine
-cmd/dcrctl/dcrctl
+cmd/eacrctl/eacrctl
 cmd/findcheckpoint/findcheckpoint
 cmd/gencerts/gencerts
 cmd/promptsecret/promptsecret

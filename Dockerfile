@@ -31,7 +31,7 @@ FROM golang:1.12
 # $ docker run -d --rm -p 127.0.0.1:19109:19109 -v /var/ecrd:/root/.ecrd user/ecrd
 #
 
-WORKDIR /go/src/github.com/Eacred/ecrd
+WORKDIR /go/src/github.com/Eacred/eacrd
 COPY . .
 
 RUN env GO111MODULE=on go install . ./cmd/...

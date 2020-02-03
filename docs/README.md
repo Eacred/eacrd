@@ -3,7 +3,7 @@
 2. [Getting Started](#GettingStarted)
     1. [Installation](#Installation)
     2. [Configuration](#Configuration)
-    3. [Controlling and Querying ecrd via dcrctl](#DcrctlConfig)
+    3. [Controlling and Querying ecrd via eacrctl](#DcrctlConfig)
     4. [Mining](#Mining)
 3. [Help](#Help)
     1. [Network Configuration](#NetworkConfig)
@@ -48,14 +48,14 @@ The first step is to install ecrd.  The installation instructions can be found
 
 **2.2 Configuration**<br />
 
-ecrd has a number of [configuration](https://godoc.org/github.com/Eacred/ecrd)
+ecrd has a number of [configuration](https://godoc.org/github.com/Eacred/eacrd)
 options, which can be viewed by running: `$ ecrd --help`.
 
 <a name="DcrctlConfig" />
 
-**2.3 Controlling and Querying ecrd via dcrctl**<br />
+**2.3 Controlling and Querying ecrd via eacrctl**<br />
 
-dcrctl is a command line utility that can be used to both control and query ecrd
+eacrctl is a command line utility that can be used to both control and query ecrd
 via [RPC](https://www.wikipedia.org/wiki/Remote_procedure_call).  ecrd does
 **not** enable its RPC server by default;  You must configure at minimum both an
 RPC username and password or both an RPC limited username and password:
@@ -68,7 +68,7 @@ rpcpass=SomeDecentp4ssw0rd
 rpclimituser=mylimituser
 rpclimitpass=Limitedp4ssw0rd
 ```
-* dcrctl.conf configuration file
+* eacrctl.conf configuration file
 ```
 [Application Options]
 rpcuser=myuser
@@ -80,7 +80,7 @@ OR
 rpclimituser=mylimituser
 rpclimitpass=Limitedp4ssw0rd
 ```
-For a list of available options, run: `$ dcrctl --help`
+For a list of available options, run: `$ eacrctl --help`
 
 <a name="Mining" />
 
@@ -144,7 +144,7 @@ information.
 
 If you have any further questions you can find us at:
 
-https://decred.org/community
+https://eacred.org/community
 
 <a name="DeveloperResources" />
 

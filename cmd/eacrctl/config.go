@@ -35,9 +35,9 @@ const (
 
 var (
 	ecrdHomeDir            = dcrutil.AppDataDir("ecrd", false)
-	dcrctlHomeDir          = dcrutil.AppDataDir("dcrctl", false)
+	eacrctlHomeDir          = dcrutil.AppDataDir("eacrctl", false)
 	dcrwalletHomeDir       = dcrutil.AppDataDir("dcrwallet", false)
-	defaultConfigFile      = filepath.Join(dcrctlHomeDir, "dcrctl.conf")
+	defaultConfigFile      = filepath.Join(eacrctlHomeDir, "eacrctl.conf")
 	defaultRPCServer       = "localhost"
 	defaultWalletRPCServer = "localhost"
 	defaultRPCCertFile     = filepath.Join(ecrdHomeDir, "rpc.cert")
@@ -103,7 +103,7 @@ func listCommands() {
 	}
 }
 
-// config defines the configuration options for dcrctl.
+// config defines the configuration options for eacrctl.
 //
 // See loadConfig for details on the configuration load process.
 type config struct {

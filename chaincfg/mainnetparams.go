@@ -80,7 +80,7 @@ func MainNetParams() *Params {
 		// DNSSeeds: []DNSSeed{
 		// 	{"mainnet-seed.decred.mindcry.org", true},
 		// 	{"mainnet-seed.decred.netpurgatory.com", true},
-		// 	{"mainnet-seed.decred.org", true},
+		// 	{"mainnet-seed.eacred.org", true},
 		// },
 		DNSSeeds: []DNSSeed{
 			{"23.91.96.206", true},

@@ -351,7 +351,7 @@ const FileContents = `[Application Options]
 ;   profile=[::1]:6061
 `
 
-// DcrctlSampleConfig is a string containing the commented example config for dcrctl.
+// DcrctlSampleConfig is a string containing the commented example config for eacrctl.
 const DcrctlSampleConfig = `[Application Options]
 
 ; ------------------------------------------------------------------------------
