@@ -95,7 +95,7 @@ var subsystemLoggers = map[string]slog.Logger{
 	"BMGR": bmgrLog,
 	"CHAN": chanLog,
 	"CMGR": cmgrLog,
-	"ECRD": eacrddLog,
+	"ECRD": eacrdLog,
 	"DISC": discLog,
 	"FEES": feesLog,
 	"INDX": indxLog,
@@ -164,7 +164,7 @@ func directionString(inbound bool) string {
 
 // fatalf logs a string, then cleanly exits.
 func fatalf(str string) {
-	eacrddLog.Errorf("Unable to create profiler: %v", str)
+	eacrdLog.Errorf("Unable to create profiler: %v", str)
 	os.Stdout.Sync()
 	if logRotator != nil {
 		logRotator.Close()
