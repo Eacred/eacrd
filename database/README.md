@@ -7,12 +7,12 @@ database
 
 Package database provides a block and metadata storage database.
 
-Please note that this package is intended to enable ecrd to support different
+Please note that this package is intended to enable eacrd to support different
 database backends and is not something that a client can directly access as only
 one entity can have the database open at a time (for most database backends),
-and that entity will be ecrd.
+and that entity will be eacrd.
 
-When a client wants programmatic access to the data provided by ecrd, they'll
+When a client wants programmatic access to the data provided by eacrd, they'll
 likely want to use the [dcrrpcclient](https://github.com/Eacred/dcrrpcclient)
 package which makes use of the [JSON-RPC API](https://github.com/Eacred/eacrd/tree/master/docs/json_rpc_api.mediawiki).
 

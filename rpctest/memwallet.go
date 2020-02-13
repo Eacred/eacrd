@@ -170,7 +170,7 @@ func (m *memWallet) SyncedHeight() int64 {
 	return m.currentHeight
 }
 
-// SetRPCClient saves the passed rpc connection to ecrd as the wallet's
+// SetRPCClient saves the passed rpc connection to eacrd as the wallet's
 // personal rpc connection.
 func (m *memWallet) SetRPCClient(rpcClient *rpcclient.Client) {
 	m.rpc = rpcClient

@@ -27,7 +27,7 @@ digraph {
 	peer [label="peer/v2" fillcolor=khaki]
 	rpcclient [label="rpcclient/v4" fillcolor=mediumseagreen]
 	fees [label="fees" fillcolor=darkolivegreen2]
-	ecrd [label="ecrd" fillcolor=chocolate]
+	eacrd [label="eacrd" fillcolor=chocolate]
 
 	{rank=same connmgr addrmgr hdkeychain peer rpcclient mempool}
 
@@ -58,12 +58,12 @@ digraph {
 	dcrjson -> types [dir=back color=tomato]
 	types -> rpcclient [dir=back color=indianred]
 
-	fees -> ecrd [dir=back color=darkolivegreen2]
-	mempool -> ecrd [dir=back color=slategray]
-	certgen -> ecrd [dir=back color=darkkhaki]
-	addrmgr -> ecrd [dir=back color=lightsalmon]
-	hdkeychain -> ecrd [dir=back color=deepskyblue]
-	connmgr -> ecrd [dir=back color=mistyrose]
-	rpcclient -> ecrd [dir=back color=mediumseagreen]
-	peer -> ecrd [dir=back color=khaki]
+	fees -> eacrd [dir=back color=darkolivegreen2]
+	mempool -> eacrd [dir=back color=slategray]
+	certgen -> eacrd [dir=back color=darkkhaki]
+	addrmgr -> eacrd [dir=back color=lightsalmon]
+	hdkeychain -> eacrd [dir=back color=deepskyblue]
+	connmgr -> eacrd [dir=back color=mistyrose]
+	rpcclient -> eacrd [dir=back color=mediumseagreen]
+	peer -> eacrd [dir=back color=khaki]
 }

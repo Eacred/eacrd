@@ -7,28 +7,28 @@ FROM golang:1.12
 #
 # NOTE: When running simnet, you may not want to preserve
 #       the data and logs.  This can be achieved by specifying
-#       a location outside the default ~/.ecrd.  For example:
+#       a location outside the default ~/.eacrd.  For example:
 #          rpclisten=
 #          simnet=1
 #          datadir=~/simnet-data
 #          logdir=~/simnet-logs
 #
 # Example testnet instance with RPC server access:
-# $ mkdir -p /local/path/ecrd
+# $ mkdir -p /local/path/eacrd
 #
-# Place a ecrd.conf into a local directory, i.e. /var/ecrd
-# $ mv ecrd.conf /var/ecrd
+# Place a eacrd.conf into a local directory, i.e. /var/eacrd
+# $ mv eacrd.conf /var/eacrd
 #
 # Verify basic configuration
-# $ cat /var/ecrd/ecrd.conf
+# $ cat /var/eacrd/eacrd.conf
 # rpclisten=
 # testnet=1
 #
 # Build the docker image
-# $ docker build -t user/ecrd .
+# $ docker build -t user/eacrd .
 #
-# Run the docker image, mapping the testnet ecrd RPC port.
-# $ docker run -d --rm -p 127.0.0.1:19109:19109 -v /var/ecrd:/root/.ecrd user/ecrd
+# Run the docker image, mapping the testnet eacrd RPC port.
+# $ docker run -d --rm -p 127.0.0.1:19109:19109 -v /var/eacrd:/root/.eacrd user/eacrd
 #
 
 WORKDIR /go/src/github.com/Eacred/eacrd
@@ -45,4 +45,4 @@ EXPOSE 19668 19669
 # simnet
 EXPOSE 18555 19556
 
-CMD [ "ecrd" ]
+CMD [ "eacrd" ]

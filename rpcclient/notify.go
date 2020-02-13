@@ -160,12 +160,12 @@ type NotificationHandlers struct {
 	// made to register for the notification and the function is non-nil.
 	OnTxAcceptedVerbose func(txDetails *chainjson.TxRawResult)
 
-	// OnEcrdConnected is invoked when a wallet connects or disconnects from
-	// ecrd.
+	// OnEacrdConnected is invoked when a wallet connects or disconnects from
+	// eacrd.
 	//
 	// This will only be available when client is connected to a wallet
 	// server such as eacrwallet.
-	OnEcrdConnected func(connected bool)
+	OnEacrdConnected func(connected bool)
 
 	// OnAccountBalance is invoked with account balance updates.
 	//
@@ -433,22 +433,22 @@ func (c *Client) handleNotification(ntfn *rawNotification) {
 
 	// Handle wallet notifications.
 	switch ntfn.Method {
-	// OnEcrdConnected
-	case walletjson.EcrdConnectedNtfnMethod:
+	// OnEacrdConnected
+	case walletjson.EacrdConnectedNtfnMethod:
 		// Ignore the notification if the client is not interested in
 		// it.
-		if c.ntfnHandlers.OnEcrdConnected == nil {
+		if c.ntfnHandlers.OnEacrdConnected == nil {
 			return
 		}
 
-		connected, err := parseEcrdConnectedNtfnParams(ntfn.Params)
+		connected, err := parseEacrdConnectedNtfnParams(ntfn.Params)
 		if err != nil {
-			log.Warnf("Received invalid ecrd connected "+
+			log.Warnf("Received invalid eacrd connected "+
 				"notification: %v", err)
 			return
 		}
 
-		c.ntfnHandlers.OnEcrdConnected(connected)
+		c.ntfnHandlers.OnEacrdConnected(connected)
 
 	// OnAccountBalance
 	case walletjson.AccountBalanceNtfnMethod:
@@ -981,9 +981,9 @@ func parseTxAcceptedVerboseNtfnParams(params []json.RawMessage) (*chainjson.TxRa
 	return &rawTx, nil
 }
 
-// parseEcrdConnectedNtfnParams parses out the connection status of ecrd
-// and eacrwallet from the parameters of a ecrdconnected notification.
-func parseEcrdConnectedNtfnParams(params []json.RawMessage) (bool, error) {
+// parseEacrdConnectedNtfnParams parses out the connection status of eacrd
+// and eacrwallet from the parameters of a eacrdconnected notification.
+func parseEacrdConnectedNtfnParams(params []json.RawMessage) (bool, error) {
 	if len(params) != 1 {
 		return false, wrongNumParams(len(params))
 	}
@@ -1216,7 +1216,7 @@ func (r FutureNotifyWorkResult) Receive() error {
 //
 // See NotifyBlocks for the blocking version and more details.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyBlocksAsync() FutureNotifyBlocksResult {
 	// Not supported in HTTP POST mode.
 	if c.config.HTTPPostMode {
@@ -1239,7 +1239,7 @@ func (c *Client) NotifyBlocksAsync() FutureNotifyBlocksResult {
 //
 // See NotifyWork for the blocking version and more details.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyWorkAsync() FutureNotifyWorkResult {
 	// Not supported in HTTP POST mode.
 	if c.config.HTTPPostMode {
@@ -1265,7 +1265,7 @@ func (c *Client) NotifyWorkAsync() FutureNotifyWorkResult {
 // The notifications delivered as a result of this call will be via one of
 // OnBlockConnected or OnBlockDisconnected.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyBlocks() error {
 	return c.NotifyBlocksAsync().Receive()
 }
@@ -1276,7 +1276,7 @@ func (c *Client) NotifyBlocks() error {
 // The notifications delivered as a result of this call will be via one of
 // OnWork.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyWork() error {
 	return c.NotifyWorkAsync().Receive()
 }
@@ -1298,7 +1298,7 @@ func (r FutureNotifyWinningTicketsResult) Receive() error {
 //
 // See NotifyWinningTickets for the blocking version and more details.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyWinningTicketsAsync() FutureNotifyWinningTicketsResult {
 	// Not supported in HTTP POST mode.
 	if c.config.HTTPPostMode {
@@ -1326,7 +1326,7 @@ func (c *Client) NotifyWinningTicketsAsync() FutureNotifyWinningTicketsResult {
 // The notifications delivered as a result of this call will be those from
 // OnWinningTickets.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyWinningTickets() error {
 	return c.NotifyWinningTicketsAsync().Receive()
 }
@@ -1348,7 +1348,7 @@ func (r FutureNotifySpentAndMissedTicketsResult) Receive() error {
 //
 // See NotifySpentAndMissedTickets for the blocking version and more details.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifySpentAndMissedTicketsAsync() FutureNotifySpentAndMissedTicketsResult {
 	// Not supported in HTTP POST mode.
 	if c.config.HTTPPostMode {
@@ -1376,7 +1376,7 @@ func (c *Client) NotifySpentAndMissedTicketsAsync() FutureNotifySpentAndMissedTi
 // The notifications delivered as a result of this call will be those from
 // OnSpentAndMissedTickets.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifySpentAndMissedTickets() error {
 	return c.NotifySpentAndMissedTicketsAsync().Receive()
 }
@@ -1398,7 +1398,7 @@ func (r FutureNotifyNewTicketsResult) Receive() error {
 //
 // See NotifyNewTickets for the blocking version and more details.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyNewTicketsAsync() FutureNotifyNewTicketsResult {
 	// Not supported in HTTP POST mode.
 	if c.config.HTTPPostMode {
@@ -1424,7 +1424,7 @@ func (c *Client) NotifyNewTicketsAsync() FutureNotifyNewTicketsResult {
 //
 // The notifications delivered as a result of this call will be via OnNewTickets.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyNewTickets() error {
 	return c.NotifyNewTicketsAsync().Receive()
 }
@@ -1446,7 +1446,7 @@ func (r FutureNotifyStakeDifficultyResult) Receive() error {
 //
 // See NotifyStakeDifficulty for the blocking version and more details.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyStakeDifficultyAsync() FutureNotifyStakeDifficultyResult {
 	// Not supported in HTTP POST mode.
 	if c.config.HTTPPostMode {
@@ -1474,7 +1474,7 @@ func (c *Client) NotifyStakeDifficultyAsync() FutureNotifyStakeDifficultyResult 
 // The notifications delivered as a result of this call will be via
 // OnStakeDifficulty.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyStakeDifficulty() error {
 	return c.NotifyStakeDifficultyAsync().Receive()
 }
@@ -1496,7 +1496,7 @@ func (r FutureNotifyNewTransactionsResult) Receive() error {
 //
 // See NotifyNewTransactionsAsync for the blocking version and more details.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyNewTransactionsAsync(verbose bool) FutureNotifyNewTransactionsResult {
 	// Not supported in HTTP POST mode.
 	if c.config.HTTPPostMode {
@@ -1523,7 +1523,7 @@ func (c *Client) NotifyNewTransactionsAsync(verbose bool) FutureNotifyNewTransac
 // OnTxAccepted (when verbose is false) or OnTxAcceptedVerbose (when verbose is
 // true).
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) NotifyNewTransactions(verbose bool) error {
 	return c.NotifyNewTransactionsAsync(verbose).Receive()
 }
@@ -1545,7 +1545,7 @@ func (r FutureLoadTxFilterResult) Receive() error {
 //
 // See LoadTxFilter for the blocking version and more details.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) LoadTxFilterAsync(reload bool, addresses []dcrutil.Address,
 	outPoints []wire.OutPoint) FutureLoadTxFilterResult {
 
@@ -1570,7 +1570,7 @@ func (c *Client) LoadTxFilterAsync(reload bool, addresses []dcrutil.Address,
 // filter.  The filter is consistently updated based on inspected transactions
 // during mempool acceptance, block acceptance, and for all rescanned blocks.
 //
-// NOTE: This is a ecrd extension and requires a websocket connection.
+// NOTE: This is a eacrd extension and requires a websocket connection.
 func (c *Client) LoadTxFilter(reload bool, addresses []dcrutil.Address, outPoints []wire.OutPoint) error {
 	return c.LoadTxFilterAsync(reload, addresses, outPoints).Receive()
 }

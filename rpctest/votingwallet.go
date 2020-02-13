@@ -17,7 +17,7 @@ import (
 	"github.com/Eacred/eacrd/dcrec"
 	"github.com/Eacred/eacrd/dcrec/secp256k1"
 	"github.com/Eacred/eacrd/dcrutil"
-	ecrdtypes "github.com/Eacred/eacrd/rpc/jsonrpc/types"
+	eacrdtypes "github.com/Eacred/eacrd/rpc/jsonrpc/types"
 	"github.com/Eacred/eacrd/rpcclient"
 	"github.com/Eacred/eacrd/txscript"
 	"github.com/Eacred/eacrd/wire"
@@ -328,8 +328,8 @@ func (w *VotingWallet) GenerateBlocks(nb uint32) ([]*chainhash.Hash, error) {
 		for !gotAllReqs {
 			select {
 			case <-timeout:
-				mempoolTickets, _ := w.c.GetRawMempool(ecrdtypes.GRMTickets)
-				mempoolVotes, _ := w.c.GetRawMempool(ecrdtypes.GRMVotes)
+				mempoolTickets, _ := w.c.GetRawMempool(eacrdtypes.GRMTickets)
+				mempoolVotes, _ := w.c.GetRawMempool(eacrdtypes.GRMVotes)
 				var notGot []string
 				if len(mempoolVotes) != nbVotes {
 					notGot = append(notGot, "votes")
@@ -343,8 +343,8 @@ func (w *VotingWallet) GenerateBlocks(nb uint32) ([]*chainhash.Hash, error) {
 			case <-w.quitChan:
 				return nil, fmt.Errorf("wallet is stopping")
 			case <-testTimeout:
-				mempoolTickets, _ := w.c.GetRawMempool(ecrdtypes.GRMTickets)
-				mempoolVotes, _ := w.c.GetRawMempool(ecrdtypes.GRMVotes)
+				mempoolTickets, _ := w.c.GetRawMempool(eacrdtypes.GRMTickets)
+				mempoolVotes, _ := w.c.GetRawMempool(eacrdtypes.GRMVotes)
 
 				gotAllReqs = (!needsTickets || (len(mempoolTickets) >= nbVotes)) &&
 					(!needsVotes || (len(mempoolVotes) >= nbVotes))

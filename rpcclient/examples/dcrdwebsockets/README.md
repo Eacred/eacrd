@@ -1,7 +1,7 @@
-ecrd Websockets Example
+eacrd Websockets Example
 =======================
 
-This example shows how to use the rpcclient package to connect to a ecrd RPC
+This example shows how to use the rpcclient package to connect to a eacrd RPC
 server using TLS-secured websockets, register for block connected and block
 disconnected notifications, and get the current block count.
 
@@ -27,7 +27,7 @@ password for the RPC server:
 Finally, navigate to the example's directory and run it with:
 
 ```bash
-$ cd $GOPATH/src/github.com/Eacred/eacrd/rpcclient/examples/ecrdwebsockets
+$ cd $GOPATH/src/github.com/Eacred/eacrd/rpcclient/examples/eacrdwebsockets
 $ go run *.go
 ```
 

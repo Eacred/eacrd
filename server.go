@@ -72,7 +72,7 @@ const (
 var (
 	// userAgentName is the user agent name and is used to help identify
 	// ourselves to other Decred peers.
-	userAgentName = "ecrd"
+	userAgentName = "eacrd"
 
 	// userAgentVersion is the user agent version and is used to help
 	// identify ourselves to other peers.
@@ -1924,7 +1924,7 @@ func (s *server) peerHandler() {
 		}
 		defaultPort, _ := strconv.Atoi(params.DefaultPort)
 		connmgr.SeedFromDNS(seeds, uint16(defaultPort), defaultRequiredServices,
-			ecrdLookup, func(addrs []*wire.NetAddress) {
+			eacrdLookup, func(addrs []*wire.NetAddress) {
 				// Bitcoind uses a lookup of the dns seeder here. This
 				// is rather strange since the values looked up by the
 				// DNS seed lookups will vary quite a lot.
@@ -2415,7 +2415,7 @@ out:
 			// listen port?
 			// XXX this assumes timeout is in seconds.
 			listenPort, err := s.nat.AddPortMapping("tcp", int(lport), int(lport),
-				"ecrd listen port", 20*60)
+				"eacrd listen port", 20*60)
 			if err != nil {
 				srvrLog.Warnf("can't add UPnP port mapping: %v", err)
 			}
@@ -2475,7 +2475,7 @@ func standardScriptVerifyFlags(chain *blockchain.BlockChain) (txscript.ScriptFla
 	return scriptFlags, nil
 }
 
-// newServer returns a new ecrd server configured to listen on addr for the
+// newServer returns a new eacrd server configured to listen on addr for the
 // Decred network type specified by chainParams.  Use start to begin accepting
 // connections from peers.
 func newServer(listenAddrs []string, db database.DB, chainParams *chaincfg.Params, dataDir string, interrupt <-chan struct{}) (*server, error) {
@@ -2484,7 +2484,7 @@ func newServer(listenAddrs []string, db database.DB, chainParams *chaincfg.Param
 		services &^= wire.SFNodeCF
 	}
 
-	amgr := addrmgr.New(cfg.DataDir, ecrdLookup)
+	amgr := addrmgr.New(cfg.DataDir, eacrdLookup)
 
 	var listeners []net.Listener
 	var nat NAT
@@ -2869,7 +2869,7 @@ func newServer(listenAddrs []string, db database.DB, chainParams *chaincfg.Param
 		OnAccept:       s.inboundPeerConnected,
 		RetryDuration:  connectionRetryInterval,
 		TargetOutbound: uint32(targetOutbound),
-		Dial:           ecrdDial,
+		Dial:           eacrdDial,
 		OnConnection:   s.outboundPeerConnected,
 		GetNewAddress:  newAddressFunc,
 	})
@@ -2921,9 +2921,9 @@ func addrStringToNetAddr(addr string) (net.Addr, error) {
 	}
 
 	// Attempt to look up an IP address associated with the parsed host.
-	// The ecrdLookup function will transparently handle performing the
+	// The eacrdLookup function will transparently handle performing the
 	// lookup over Tor if necessary.
-	ips, err := ecrdLookup(host)
+	ips, err := eacrdLookup(host)
 	if err != nil {
 		return nil, err
 	}

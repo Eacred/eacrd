@@ -25,8 +25,8 @@ const (
 )
 
 var (
-	ecrdHomeDir     = dcrutil.AppDataDir("ecrd", false)
-	defaultDataDir  = filepath.Join(ecrdHomeDir, "data")
+	eacrdHomeDir     = dcrutil.AppDataDir("eacrd", false)
+	defaultDataDir  = filepath.Join(eacrdHomeDir, "data")
 	knownDbTypes    = database.SupportedDrivers()
 	activeNetParams = chaincfg.MainNetParams()
 )
@@ -35,7 +35,7 @@ var (
 //
 // See loadConfig for details on the configuration load process.
 type config struct {
-	DataDir       string `short:"b" long:"datadir" description:"Location of the ecrd data directory"`
+	DataDir       string `short:"b" long:"datadir" description:"Location of the eacrd data directory"`
 	DbType        string `long:"dbtype" description:"Database backend to use for the Block Chain"`
 	TestNet       bool   `long:"testnet" description:"Use the test network"`
 	SimNet        bool   `long:"simnet" description:"Use the simulation test network"`

@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 /*
-Package types implements concrete types for marshalling to and from the ecrd
+Package types implements concrete types for marshalling to and from the eacrd
 JSON-RPC commands, return values, and notifications.
 
 Overview

@@ -6,7 +6,7 @@ version
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/Eacred/eacrd/internal/version)
 
 Package version provides a single location to house the version information for
-ecrd and other utilities provided in the same repository.
+eacrd and other utilities provided in the same repository.
 
 ## Installation and Updating
 

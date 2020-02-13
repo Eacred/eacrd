@@ -11,9 +11,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/Eacred/eacrd/dcrutil"
 	"github.com/Eacred/eacrd/rpcclient"
+	"github.com/davecgh/go-spew/spew"
 )
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 		log.Fatal(err)
 	}
 	connCfg := &rpcclient.ConnConfig{
-		Host:         "localhost:9110",
+		Host:         "localhost:9660", //"localhost:9110",
 		Endpoint:     "ws",
 		User:         "yourrpcuser",
 		Pass:         "yourrpcpass",

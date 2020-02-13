@@ -1,4 +1,4 @@
-ecrd
+eacrd
 ====
 
 [![Build Status](https://github.com/Eacred/eacrd/workflows/Build%20and%20Test/badge.svg)](https://github.com/Eacred/eacrd/actions)
@@ -20,11 +20,11 @@ https://eacred.org
 
 https://eacred.org/downloads
 
-## What is ecrd?
+## What is eacrd?
 
-ecrd is a full node implementation of Eacred written in Go (golang).
+eacrd is a full node implementation of Eacred written in Go (golang).
 
-It acts as a fully-validating chain daemon for the Eacred cryptocurrency.  ecrd
+It acts as a fully-validating chain daemon for the Eacred cryptocurrency.  eacrd
 maintains the entire past transactional ledger of Eacred and allows relaying of
 transactions to other Eacred nodes around the world.
 
@@ -35,7 +35,7 @@ The software was originally forked from [btcd](https://github.com/btcsuite/btcd)
 which is a bitcoin full node implementation that is still under active
 development.  To gain the benefit of btcd's ongoing upgrades, including improved
 peer and connection handling, database optimization, and other blockchain
-related technology improvements, ecrd is continuously synced with the btcd
+related technology improvements, eacrd is continuously synced with the btcd
 codebase.
 
 ## What is a full node?
@@ -53,13 +53,13 @@ of software participating in the Eacred peer network. For instance, there are
 and cryptographic proofs they require to function, as well as relay their
 transactions to the rest of the global network.
 
-## Why run ecrd?
+## Why run eacrd?
 
 As described in the previous section, the Eacred cryptocurrency relies on having
 a peer-to-peer network of nodes that fully validate all transactions and blocks
 and then relay them to other full nodes.
 
-Running a full node with ecrd contributes to the overall security of the
+Running a full node with eacrd contributes to the overall security of the
 network, increases the available paths for transactions and blocks to relay,
 and helps ensure there are an adequate number of nodes available to serve
 lightweight clients, such as Simplified Payment Verification (SPV) wallets.
@@ -69,13 +69,13 @@ users of lightweight clients which could force them to have to rely on
 centralized services that significantly reduce privacy and are vulnerable to
 censorship.
 
-In terms of individual benefits, since ecrd fully validates every block and
+In terms of individual benefits, since eacrd fully validates every block and
 transaction, it provides the highest security and privacy possible when used in
 conjunction with a wallet that also supports directly connecting to it in full
 validation mode, such as [eacrwallet (CLI)](https://github.com/Eacred/eacrwallet)
 and [Eacrediton (GUI)](https://github.com/Eacred/eacrediton).
 
-## Minimum Recommended Specifications (ecrd only)
+## Minimum Recommended Specifications (eacrd only)
 
 * 10 GB disk space (as of September 2018, increases over time)
 * 1GB memory (RAM)
@@ -87,7 +87,7 @@ and [Eacrediton (GUI)](https://github.com/Eacred/eacrediton).
 ## Getting Started
 
 So, you've decided to help the network by running a full node.  Great!  Running
-ecrd is simple.  All you need to do is install ecrd on a machine that is
+eacrd is simple.  All you need to do is install eacrd on a machine that is
 connected to the internet and meets the minimum recommended specifications, and
 launch it.
 
@@ -124,65 +124,65 @@ the repo's root directory.  Some notes:
 * Set the `GO111MODULE=on` environment variable if building from within
   `GOPATH`.
 
-* The `ecrd` executable will be installed to `$GOPATH/bin`.  `GOPATH`
+* The `eacrd` executable will be installed to `$GOPATH/bin`.  `GOPATH`
   defaults to `$HOME/go` (or `%USERPROFILE%\go` on Windows) if unset.
 
 
 ### Example of obtaining and building from source on Windows 10:
 
 ```PowerShell
-PS> git clone https://github.com/Eacred/eacrd $env:USERPROFILE\src\ecrd
-PS> cd $env:USERPROFILE\src\ecrd
+PS> git clone https://github.com/Eacred/eacrd $env:USERPROFILE\src\eacrd
+PS> cd $env:USERPROFILE\src\eacrd
 PS> go install . .\cmd\...
-PS> & "$(go env GOPATH)\bin\ecrd" -V
+PS> & "$(go env GOPATH)\bin\eacrd" -V
 
 ```
 
 ## Docker
 
-### Running ecrd
+### Running eacrd
 
 You can run a eacred node from inside a docker container.  To build the image
 yourself, use the following command:
 
 ```
-docker build -t eacred/ecrd .
+docker build -t eacred/eacrd .
 ```
 
 Or you can create an alpine based image (requires Docker 17.05 or higher):
 
 ```
-docker build -t eacred/ecrd:alpine -f Dockerfile.alpine .
+docker build -t eacred/eacrd:alpine -f Dockerfile.alpine .
 ```
 
 You can then run the image using:
 
 ```
-docker run eacred/ecrd
+docker run eacred/eacrd
 ```
 
 You may wish to use an external volume to customise your config and persist the
 data in an external volume:
 
 ```
-docker run --rm -v /home/user/ecrdata:/root/.ecrd/data eacred/ecrd
+docker run --rm -v /home/user/eacrdata:/root/.eacrd/data eacred/eacrd
 ```
 
-For a minimal image, you can use the eacred/ecrd:alpine tag.  This is typically
+For a minimal image, you can use the eacred/eacrd:alpine tag.  This is typically
 a more secure option while also being a much smaller image.
 
 You can run eacrctl from inside the image.  For example, run an image (mounting
 your data from externally) with:
 
 ```
-docker run --rm -ti --name=ecrd-1 -v /home/user/.ecrd:/root/.ecrd \
-  eacred/ecrd:alpine
+docker run --rm -ti --name=eacrd-1 -v /home/user/.eacrd:/root/.eacrd \
+  eacred/eacrd:alpine
 ```
 
 And then run eacrctl commands against it.  For example:
 
 ```
-docker exec -ti ecrd-1 eacrctl getbestblock
+docker exec -ti eacrd-1 eacrctl getbestblock
 ```
 
 ### Running Tests
@@ -223,9 +223,9 @@ is used for this project.
 
 ## Documentation
 
-The documentation for ecrd is a work-in-progress.  It is located in the
+The documentation for eacrd is a work-in-progress.  It is located in the
 [docs](https://github.com/Eacred/eacrd/tree/master/docs) folder.
 
 ## License
 
-ecrd is licensed under the [copyfree](http://copyfree.org) ISC License.
+eacrd is licensed under the [copyfree](http://copyfree.org) ISC License.

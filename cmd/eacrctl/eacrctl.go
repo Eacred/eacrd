@@ -16,7 +16,7 @@ import (
 	"strings"
 
 	"github.com/Eacred/eacrd/dcrjson"
-	ecrdtypes "github.com/Eacred/eacrd/rpc/jsonrpc/types"
+	eacrdtypes "github.com/Eacred/eacrd/rpc/jsonrpc/types"
 	wallettypes "github.com/Eacred/eacrwallet/rpc/jsonrpc/types"
 )
 
@@ -67,7 +67,7 @@ func main() {
 	// Ensure the specified method identifies a valid registered command and
 	// is one of the usable types.
 	methodStr := args[0]
-	var method interface{} = ecrdtypes.Method(methodStr)
+	var method interface{} = eacrdtypes.Method(methodStr)
 	usageFlags, err := dcrjson.MethodUsageFlags(method)
 	if err != nil {
 		method = wallettypes.Method(methodStr)

@@ -7,7 +7,7 @@ rpcclient
 
 rpcclient implements a Websocket-enabled Decred JSON-RPC client package written
 in [Go](https://golang.org/).  It provides a robust and easy to use client for
-interfacing with a Decred RPC server that uses a ecrd compatible Decred
+interfacing with a Decred RPC server that uses a eacrd compatible Decred
 JSON-RPC API.
 
 ## Status
@@ -19,8 +19,8 @@ implement and the API is not stable yet.
 ## Documentation
 
 * [API Reference](https://godoc.org/github.com/Eacred/eacrd/rpcclient)
-* [ecrd Websockets Example](https://github.com/Eacred/eacrd/tree/master/rpcclient/examples/ecrdwebsockets)
-  Connects to a ecrd RPC server using TLS-secured websockets, registers for
+* [eacrd Websockets Example](https://github.com/Eacred/eacrd/tree/master/rpcclient/examples/eacrdwebsockets)
+  Connects to a eacrd RPC server using TLS-secured websockets, registers for
   block connected and block disconnected notifications, and gets the current
   block count
 * [eacrwallet Websockets Example](https://github.com/Eacred/eacrd/tree/master/rpcclient/examples/eacrwalletwebsockets)  
@@ -30,9 +30,9 @@ implement and the API is not stable yet.
 
 ## Major Features
 
-* Supports Websockets (ecrd/eacrwallet) and HTTP POST mode (bitcoin core-like)
-* Provides callback and registration functions for ecrd/eacrwallet notifications
-* Supports ecrd extensions
+* Supports Websockets (eacrd/eacrwallet) and HTTP POST mode (bitcoin core-like)
+* Provides callback and registration functions for eacrd/eacrwallet notifications
+* Supports eacrd extensions
 * Translates to and from higher-level and easier to use Go types
 * Offers a synchronous (blocking) and asynchronous API
 * When running in Websockets mode (the default):

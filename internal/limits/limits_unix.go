@@ -17,7 +17,7 @@ const (
 	fileLimitMin  = 1024
 )
 
-// SetLimits raises some process limits to values which allow ecrd and
+// SetLimits raises some process limits to values which allow eacrd and
 // associated utilities to run.
 func SetLimits() error {
 	var rLimit syscall.Rlimit

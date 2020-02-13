@@ -69,11 +69,11 @@ var (
 var (
 	ErrClientNotConnected = Error{
 		Code:    -9,
-		Message: "ecrd is not connected",
+		Message: "eacrd is not connected",
 	}
 	ErrClientInInitialDownload = Error{
 		Code:    -10,
-		Message: "ecrd is downloading blocks...",
+		Message: "eacrd is downloading blocks...",
 	}
 )
 
@@ -163,7 +163,7 @@ var (
 	}
 )
 
-// Errors that are specific to ecrd.
+// Errors that are specific to eacrd.
 var (
 	ErrNoWallet = Error{
 		Code:    -1,

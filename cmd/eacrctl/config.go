@@ -20,7 +20,7 @@ import (
 	"github.com/Eacred/eacrd/dcrutil"
 	"github.com/Eacred/eacrd/internal/version"
 
-	ecrdtypes "github.com/Eacred/eacrd/rpc/jsonrpc/types"
+	eacrdtypes "github.com/Eacred/eacrd/rpc/jsonrpc/types"
 	wallettypes "github.com/Eacred/eacrwallet/rpc/jsonrpc/types"
 
 	flags "github.com/jessevdk/go-flags"
@@ -34,13 +34,13 @@ const (
 )
 
 var (
-	ecrdHomeDir            = dcrutil.AppDataDir("ecrd", false)
-	eacrctlHomeDir          = dcrutil.AppDataDir("eacrctl", false)
-	eacrwalletHomeDir       = dcrutil.AppDataDir("eacrwallet", false)
+	eacrdHomeDir            = dcrutil.AppDataDir("eacrd", false)
+	eacrctlHomeDir         = dcrutil.AppDataDir("eacrctl", false)
+	eacrwalletHomeDir      = dcrutil.AppDataDir("eacrwallet", false)
 	defaultConfigFile      = filepath.Join(eacrctlHomeDir, "eacrctl.conf")
 	defaultRPCServer       = "localhost"
 	defaultWalletRPCServer = "localhost"
-	defaultRPCCertFile     = filepath.Join(ecrdHomeDir, "rpc.cert")
+	defaultRPCCertFile     = filepath.Join(eacrdHomeDir, "rpc.cert")
 	defaultWalletCertFile  = filepath.Join(eacrwalletHomeDir, "rpc.cert")
 )
 
@@ -53,7 +53,7 @@ func listCommands() {
 		Usages []string
 	}{{
 		Header: "Chain Server Commands:",
-		Method: ecrdtypes.Method(""),
+		Method: eacrdtypes.Method(""),
 	}, {
 		Header: "Wallet Server Commands (--wallet):",
 		Method: wallettypes.Method(""),
@@ -64,8 +64,8 @@ func listCommands() {
 		methods := dcrjson.RegisteredMethods(method)
 		for _, methodStr := range methods {
 			switch method.(type) {
-			case ecrdtypes.Method:
-				method = ecrdtypes.Method(methodStr)
+			case eacrdtypes.Method:
+				method = eacrdtypes.Method(methodStr)
 			case wallettypes.Method:
 				method = wallettypes.Method(methodStr)
 			}
@@ -147,7 +147,8 @@ func normalizeAddress(addr string, useTestNet, useSimNet, useWallet bool) string
 			}
 		default:
 			if useWallet {
-				defaultPort = "9110"
+				//defaultPort = "9660"
+				defaultPort = "9669"
 			} else {
 				defaultPort = "9669"
 			}
@@ -352,23 +353,23 @@ func loadConfig() (*config, []string, error) {
 }
 
 // createDefaultConfig creates a basic config file at the given destination path.
-// For this it tries to read the ecrd config file at its default path, and extract
+// For this it tries to read the eacrd config file at its default path, and extract
 // the RPC user and password from it.
 func createDefaultConfigFile(destinationPath string) error {
-	// Nothing to do when there is no existing ecrd conf file at the default
+	// Nothing to do when there is no existing eacrd conf file at the default
 	// path to extract the details from.
-	ecrdConfigPath := filepath.Join(ecrdHomeDir, "ecrd.conf")
-	if !fileExists(ecrdConfigPath) {
+	eacrdConfigPath := filepath.Join(eacrdHomeDir, "eacrd.conf")
+	if !fileExists(eacrdConfigPath) {
 		return nil
 	}
 
-	// Read ecrd.conf from its default path
-	ecrdConfigFile, err := os.Open(ecrdConfigPath)
+	// Read eacrd.conf from its default path
+	eacrdConfigFile, err := os.Open(eacrdConfigPath)
 	if err != nil {
 		return err
 	}
-	defer ecrdConfigFile.Close()
-	content, err := ioutil.ReadAll(ecrdConfigFile)
+	defer eacrdConfigFile.Close()
+	content, err := ioutil.ReadAll(eacrdConfigFile)
 	if err != nil {
 		return err
 	}

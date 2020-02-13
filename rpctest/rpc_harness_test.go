@@ -17,7 +17,7 @@ import (
 	"github.com/Eacred/eacrd/chaincfg/chainhash"
 	"github.com/Eacred/eacrd/chaincfg"
 	"github.com/Eacred/eacrd/dcrutil"
-	ecrdtypes "github.com/Eacred/eacrd/rpc/jsonrpc/types"
+	eacrdtypes "github.com/Eacred/eacrd/rpc/jsonrpc/types"
 	"github.com/Eacred/eacrd/txscript"
 	"github.com/Eacred/eacrd/wire"
 
@@ -320,7 +320,7 @@ func testActiveHarnesses(r *Harness, t *testing.T) {
 
 func testJoinMempools(r *Harness, t *testing.T) {
 	// Assert main test harness has no transactions in its mempool.
-	pooledHashes, err := r.Node.GetRawMempool(ecrdtypes.GRMAll)
+	pooledHashes, err := r.Node.GetRawMempool(eacrdtypes.GRMAll)
 	if err != nil {
 		t.Fatalf("unable to get mempool for main test harness: %v", err)
 	}
@@ -373,7 +373,7 @@ func testJoinMempools(r *Harness, t *testing.T) {
 	var eg errgroup.Group
 	eg.Go(func() error {
 		for {
-			poolHashes, err := r.Node.GetRawMempool(ecrdtypes.GRMAll)
+			poolHashes, err := r.Node.GetRawMempool(eacrdtypes.GRMAll)
 			if err != nil {
 				return fmt.Errorf("failed to retrieve harness mempool: %v", err)
 			}

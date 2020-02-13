@@ -3,10 +3,10 @@ Description=Decred Full Node
 
 [Service]
 Type=simple
-User=ecrd
-Group=ecrd
-WorkingDirectory=/var/ecrd
-ExecStart=/opt/eacred/bin/ecrd --appdata=/var/ecrd
+User=eacrd
+Group=eacrd
+WorkingDirectory=/var/eacrd
+ExecStart=/opt/eacred/bin/eacrd --appdata=/var/eacrd
 Restart=on-abnormal
 
 [Install]

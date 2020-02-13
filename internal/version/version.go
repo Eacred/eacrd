@@ -4,7 +4,7 @@
 // license that can be found in the LICENSE file.
 
 // Package version provides a single location to house the version information
-// for ecrd and other utilities provided in the same repository.
+// for eacrd and other utilities provided in the same repository.
 package version
 
 import (

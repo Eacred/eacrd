@@ -8,7 +8,7 @@ chaincfg
 Package chaincfg defines chain configuration parameters for the four standard
 Eacred networks.
 
-Although this package was primarily written for ecrd, it has intentionally been
+Although this package was primarily written for eacrd, it has intentionally been
 designed so it can be used as a standalone package for any projects needing to
 use parameters for the standard Eacred networks or for projects needing to
 define their own network.

@@ -18,13 +18,13 @@ import (
 )
 
 const (
-	// svcName is the name of ecrd service.
-	svcName = "ecrdsvc"
+	// svcName is the name of eacrd service.
+	svcName = "eacrdsvc"
 
 	// svcDisplayName is the service name that will be shown in the windows
 	// services list.  Not the svcName is the "real" name which is used
 	// to control the service.  This is only for display purposes.
-	svcDisplayName = "Ecrd Service"
+	svcDisplayName = "Eacrd Service"
 
 	// svcDesc is the description of the service.
 	svcDesc = "Downloads and stays synchronized with the Decred block " +
@@ -34,7 +34,7 @@ const (
 // elog is used to send messages to the Windows event log.
 var elog *eventlog.Log
 
-// logServiceStartOfDay logs information about ecrd when the main server has
+// logServiceStartOfDay logs information about eacrd when the main server has
 // been started to the Windows event log.
 func logServiceStartOfDay(cfg *config) {
 	var message string
@@ -46,25 +46,25 @@ func logServiceStartOfDay(cfg *config) {
 	elog.Info(1, message)
 }
 
-// ecrdService houses the main service handler which handles all service
-// updates and launching ecrdMain.
-type ecrdService struct{}
+// eacrdService houses the main service handler which handles all service
+// updates and launching eacrdMain.
+type eacrdService struct{}
 
 // Execute is the main entry point the winsvc package calls when receiving
 // information from the Windows service control manager.  It launches the
-// long-running ecrdMain (which is the real meat of ecrd), handles service
+// long-running eacrdMain (which is the real meat of eacrd), handles service
 // change requests, and notifies the service control manager of changes.
-func (s *ecrdService) Execute(args []string, r <-chan svc.ChangeRequest, changes chan<- svc.Status) (bool, uint32) {
+func (s *eacrdService) Execute(args []string, r <-chan svc.ChangeRequest, changes chan<- svc.Status) (bool, uint32) {
 	// Service start is pending.
 	const cmdsAccepted = svc.AcceptStop | svc.AcceptShutdown
 	changes <- svc.Status{State: svc.StartPending}
 
-	// Start ecrdMain in a separate goroutine so the service can start
+	// Start eacrdMain in a separate goroutine so the service can start
 	// quickly.  Shutdown (along with a potential error) is reported via
 	// doneChan.
 	doneChan := make(chan error)
 	go func() {
-		err := ecrdMain()
+		err := eacrdMain()
 		doneChan <- err
 	}()
 
@@ -108,7 +108,7 @@ loop:
 	return false, 0
 }
 
-// installService attempts to install the ecrd service.  Typically this should
+// installService attempts to install the eacrd service.  Typically this should
 // be done by the msi installer, but it is provided here since it can be useful
 // for development.
 func installService() error {
@@ -157,7 +157,7 @@ func installService() error {
 	return eventlog.InstallAsEventCreate(svcName, eventsSupported)
 }
 
-// removeService attempts to uninstall the ecrd service.  Typically this should
+// removeService attempts to uninstall the eacrd service.  Typically this should
 // be done by the msi uninstaller, but it is provided here since it can be
 // useful for development.  Not the eventlog entry is intentionally not removed
 // since it would invalidate any existing event log messages.
@@ -180,7 +180,7 @@ func removeService() error {
 	return service.Delete()
 }
 
-// startService attempts to start the ecrd service.
+// startService attempts to start the eacrd service.
 func startService() error {
 	// Connect to the windows service manager.
 	serviceManager, err := mgr.Connect()
@@ -289,7 +289,7 @@ func serviceMain() (bool, error) {
 	}
 	defer elog.Close()
 
-	err = svc.Run(svcName, &ecrdService{})
+	err = svc.Run(svcName, &eacrdService{})
 	if err != nil {
 		elog.Error(1, fmt.Sprintf("Service start failed: %v", err))
 		return true, err

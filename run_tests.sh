@@ -14,7 +14,7 @@ set -ex
 # golangci-lint (github.com/golangci/golangci-lint) is used to run each
 # static checker.
 
-REPO=ecrd
+REPO=eacrd
 
 go version
 

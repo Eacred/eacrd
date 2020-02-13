@@ -392,7 +392,7 @@ func TestVersionOptionalFields(t *testing.T) {
 	// uaVersion is a version message that contains all fields through
 	// the UserAgent field.
 	uaVersion := nonceVersion
-	uaVersion.UserAgent = "/ecrdtest:0.0.1/"
+	uaVersion.UserAgent = "/eacrdtest:0.0.1/"
 	uaVersionEncoded := make([]byte, len(baseVersionEncoded)-4)
 	copy(uaVersionEncoded, baseVersionEncoded)
 
@@ -470,7 +470,7 @@ var baseVersion = &MsgVersion{
 		Port:      8333,
 	},
 	Nonce:     123123, // 0x1e0f3
-	UserAgent: "/ecrdtest:0.0.1/",
+	UserAgent: "/eacrdtest:0.0.1/",
 	LastBlock: 234234, // 0x392fa
 }
 
@@ -516,7 +516,7 @@ var baseVersionBIP0037 = &MsgVersion{
 		Port:      8333,
 	},
 	Nonce:     123123, // 0x1e0f3
-	UserAgent: "/ecrdtest:0.0.1/",
+	UserAgent: "/eacrdtest:0.0.1/",
 	LastBlock: 234234, // 0x392fa
 }
 

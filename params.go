@@ -22,9 +22,9 @@ type params struct {
 
 // mainNetParams contains parameters specific to the main network
 // (wire.MainNet).  NOTE: The RPC port is intentionally different than the
-// reference implementation because ecrd does not handle wallet requests.  The
+// reference implementation because eacrd does not handle wallet requests.  The
 // separate wallet process listens on the well-known port and forwards requests
-// it does not handle on to ecrd.  This approach allows the wallet process
+// it does not handle on to eacrd.  This approach allows the wallet process
 // to emulate the full reference implementation RPC API.
 var mainNetParams = params{
 	Params:  chaincfg.MainNetParams(),

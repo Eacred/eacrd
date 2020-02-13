@@ -2,7 +2,7 @@
 *~
 
 # Databases
-ecrd.db
+eacrd.db
 *-shm
 *-wal
 
@@ -34,7 +34,7 @@ _testmain.go
 
 # Binaries
 *.exe
-ecrd
+eacrd
 cmd/addblock/addblock
 cmd/checkdevpremine/checkdevpremine
 cmd/eacrctl/eacrctl

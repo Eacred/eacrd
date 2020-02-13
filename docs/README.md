@@ -3,7 +3,7 @@
 2. [Getting Started](#GettingStarted)
     1. [Installation](#Installation)
     2. [Configuration](#Configuration)
-    3. [Controlling and Querying ecrd via eacrctl](#DcrctlConfig)
+    3. [Controlling and Querying eacrd via eacrctl](#DcrctlConfig)
     4. [Mining](#Mining)
 3. [Help](#Help)
     1. [Network Configuration](#NetworkConfig)
@@ -20,7 +20,7 @@
 
 ### 1. About
 
-ecrd is a full node Eacred implementation written in [Go](https://golang.org),
+eacrd is a full node Eacred implementation written in [Go](https://golang.org),
 and is licensed under the [copyfree](http://www.copyfree.org) ISC License.
 
 This software is currently under active development.  It is extremely stable and
@@ -41,26 +41,26 @@ transactions).
 
 **2.1 Installation**<br />
 
-The first step is to install ecrd.  The installation instructions can be found
+The first step is to install eacrd.  The installation instructions can be found
 [here](https://github.com/Eacred/eacrd/tree/master/README.md#Installation).
 
 <a name="Configuration" />
 
 **2.2 Configuration**<br />
 
-ecrd has a number of [configuration](https://godoc.org/github.com/Eacred/eacrd)
-options, which can be viewed by running: `$ ecrd --help`.
+eacrd has a number of [configuration](https://godoc.org/github.com/Eacred/eacrd)
+options, which can be viewed by running: `$ eacrd --help`.
 
 <a name="DcrctlConfig" />
 
-**2.3 Controlling and Querying ecrd via eacrctl**<br />
+**2.3 Controlling and Querying eacrd via eacrctl**<br />
 
-eacrctl is a command line utility that can be used to both control and query ecrd
-via [RPC](https://www.wikipedia.org/wiki/Remote_procedure_call).  ecrd does
+eacrctl is a command line utility that can be used to both control and query eacrd
+via [RPC](https://www.wikipedia.org/wiki/Remote_procedure_call).  eacrd does
 **not** enable its RPC server by default;  You must configure at minimum both an
 RPC username and password or both an RPC limited username and password:
 
-* ecrd.conf configuration file
+* eacrd.conf configuration file
 ```
 [Application Options]
 rpcuser=myuser
@@ -85,7 +85,7 @@ For a list of available options, run: `$ eacrctl --help`
 <a name="Mining" />
 
 **2.4 Mining**<br />
-ecrd supports the [getwork](https://github.com/Eacred/eacrd/tree/master/docs/json_rpc_api.mediawiki#getwork)
+eacrd supports the [getwork](https://github.com/Eacred/eacrd/tree/master/docs/json_rpc_api.mediawiki#getwork)
 RPC.  The limited user cannot access this RPC.<br />
 
 **1. Add the payment addresses with the `miningaddr` option.**<br />
@@ -98,16 +98,16 @@ miningaddr=DsExampleAddress1
 miningaddr=DsExampleAddress2
 ```
 
-**2. Add ecrd's RPC TLS certificate to system Certificate Authority list.**<br />
+**2. Add eacrd's RPC TLS certificate to system Certificate Authority list.**<br />
 
 `cgminer` uses [curl](https://curl.haxx.se/) to fetch data from the RPC server.
-Since curl validates the certificate by default, we must install the `ecrd` RPC
+Since curl validates the certificate by default, we must install the `eacrd` RPC
 certificate into the default system Certificate Authority list.
 
 **Ubuntu**<br />
 
-1. Copy rpc.cert to /usr/share/ca-certificates: `# cp /home/user/.ecrd/rpc.cert /usr/share/ca-certificates/ecrd.crt`<br />
-2. Add ecrd.crt to /etc/ca-certificates.conf: `# echo ecrd.crt >> /etc/ca-certificates.conf`<br />
+1. Copy rpc.cert to /usr/share/ca-certificates: `# cp /home/user/.eacrd/rpc.cert /usr/share/ca-certificates/eacrd.crt`<br />
+2. Add eacrd.crt to /etc/ca-certificates.conf: `# echo eacrd.crt >> /etc/ca-certificates.conf`<br />
 3. Update the CA certificate list: `# update-ca-certificates`<br />
 
 **3. Set your mining software url to use https.**<br />
@@ -124,13 +124,13 @@ certificate into the default system Certificate Authority list.
 * [What Ports Are Used by Default?](https://github.com/Eacred/eacrd/tree/master/docs/default_ports.md)
 * [How To Listen on Specific Interfaces](https://github.com/Eacred/eacrd/tree/master/docs/configure_peer_server_listen_interfaces.md)
 * [How To Configure RPC Server to Listen on Specific Interfaces](https://github.com/Eacred/eacrd/tree/master/docs/configure_rpc_server_listen_interfaces.md)
-* [Configuring ecrd with Tor](https://github.com/Eacred/eacrd/tree/master/docs/configuring_tor.md)
+* [Configuring eacrd with Tor](https://github.com/Eacred/eacrd/tree/master/docs/configuring_tor.md)
 
 <a name="Wallet" />
 
 **3.2 Wallet**<br />
 
-ecrd was intentionally developed without an integrated wallet for security
+eacrd was intentionally developed without an integrated wallet for security
 reasons.  Please see [eacrwallet](https://github.com/Eacred/eacrwallet) for more
 information.
 
@@ -167,7 +167,7 @@ https://eacred.org/community
 
 **5.3 Go Modules**
 
-The following versioned modules are provided by ecrd repository:
+The following versioned modules are provided by eacrd repository:
 
 * [rpcclient/v4](https://github.com/Eacred/eacrd/tree/master/rpcclient) - Implements
   a robust and easy to use Websocket-enabled Eacred JSON-RPC client
@@ -232,6 +232,6 @@ The following versioned modules are provided by ecrd repository:
 **5.4 Module Hierarchy**
 
 The following diagram shows an overview of the hierarchy for the modules
-provided by the ecrd repository.
+provided by the eacrd repository.
 
 ![Module Hierarchy](./assets/module_hierarchy.svg)

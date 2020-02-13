@@ -35,11 +35,11 @@ import (
 )
 
 const (
-	defaultConfigFilename        = "ecrd.conf"
+	defaultConfigFilename        = "eacrd.conf"
 	defaultDataDirname           = "data"
 	defaultLogLevel              = "info"
 	defaultLogDirname            = "logs"
-	defaultLogFilename           = "ecrd.log"
+	defaultLogFilename           = "eacrd.log"
 	defaultMaxSameIP             = 5
 	defaultMaxPeers              = 125
 	defaultBanDuration           = time.Hour * 24
@@ -65,7 +65,7 @@ const (
 )
 
 var (
-	defaultHomeDir     = dcrutil.AppDataDir("ecrd", false)
+	defaultHomeDir     = dcrutil.AppDataDir("eacrd", false)
 	defaultConfigFile  = filepath.Join(defaultHomeDir, defaultConfigFilename)
 	defaultDataDir     = filepath.Join(defaultHomeDir, defaultDataDirname)
 	knownDbTypes       = database.SupportedDrivers()
@@ -88,7 +88,7 @@ func minUint32(a, b uint32) uint32 {
 	return b
 }
 
-// config defines the configuration options for ecrd.
+// config defines the configuration options for eacrd.
 //
 // See loadConfig for details on the configuration load process.
 type config struct {
@@ -378,7 +378,7 @@ func newConfigParser(cfg *config, so *serviceOptions, options flags.Options) *fl
 	return parser
 }
 
-// createDefaultConfig copies the file sample-ecrd.conf to the given destination path,
+// createDefaultConfig copies the file sample-eacrd.conf to the given destination path,
 // and populates it with some randomly generated RPC username and password.
 func createDefaultConfigFile(destPath string) error {
 	// Create the destination directory if it does not exist.
@@ -477,7 +477,7 @@ func parseNetworkInterfaces(cfg *config) error {
 // 	3) Load configuration file overwriting defaults with any specified options
 // 	4) Parse CLI options and overwrite/add any specified options
 //
-// The above results in ecrd functioning properly without any config settings
+// The above results in eacrd functioning properly without any config settings
 // while still allowing the user to override settings with config files and
 // command line options.  Command line options always take precedence.
 func loadConfig() (*config, []string, error) {
@@ -559,7 +559,7 @@ func loadConfig() (*config, []string, error) {
 		os.Exit(0)
 	}
 
-	// Update the home directory for ecrd if specified. Since the home
+	// Update the home directory for eacrd if specified. Since the home
 	// directory is updated, other variables need to be updated to
 	// reflect the new changes.
 	if preCfg.HomeDir != "" {
@@ -1163,7 +1163,7 @@ func loadConfig() (*config, []string, error) {
 	// Warn if old testnet directory is present.
 	for _, oldDir := range oldTestNets {
 		if fileExists(oldDir) {
-			ecrdLog.Warnf("Block chain data from previous testnet"+
+			eacrdLog.Warnf("Block chain data from previous testnet"+
 				" found (%v) and can probably be removed.",
 				oldDir)
 		}
@@ -1179,32 +1179,32 @@ func loadConfig() (*config, []string, error) {
 	// done.  This prevents the warning on help messages and invalid
 	// options.  Note this should go directly before the return.
 	if configFileError != nil {
-		ecrdLog.Warnf("%v", configFileError)
+		eacrdLog.Warnf("%v", configFileError)
 	}
 
 	return &cfg, remainingArgs, nil
 }
 
-// ecrdDial connects to the address on the named network using the appropriate
+// eacrdDial connects to the address on the named network using the appropriate
 // dial function depending on the address and configuration options.  For
 // example, .onion addresses will be dialed using the onion specific proxy if
 // one was specified, but will otherwise use the normal dial function (which
 // could itself use a proxy or not).
-func ecrdDial(network, addr string) (net.Conn, error) {
+func eacrdDial(network, addr string) (net.Conn, error) {
 	if strings.Contains(addr, ".onion:") {
 		return cfg.oniondial(network, addr)
 	}
 	return cfg.dial(network, addr)
 }
 
-// ecrdLookup returns the correct DNS lookup function to use depending on the
+// eacrdLookup returns the correct DNS lookup function to use depending on the
 // passed host and configuration options.  For example, .onion addresses will be
 // resolved using the onion specific proxy if one was specified, but will
 // otherwise treat the normal proxy as tor unless --noonion was specified in
 // which case the lookup will fail.  Meanwhile, normal IP addresses will be
 // resolved using tor if a proxy was specified unless --noonion was also
 // specified in which case the normal system DNS resolver will be used.
-func ecrdLookup(host string) ([]net.IP, error) {
+func eacrdLookup(host string) ([]net.IP, error) {
 	if strings.HasSuffix(host, ".onion") {
 		return cfg.onionlookup(host)
 	}

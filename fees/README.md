@@ -14,12 +14,12 @@ two main goals:
   (expressed in blocks);
 - Attempting to minimize fees while maintaining be above restriction.
 
-This package was started in order to resolve issue eacred/ecrd#1412 and related.
+This package was started in order to resolve issue eacred/eacrd#1412 and related.
 See that issue for discussion of the selected approach.
 
-This package was developed for ecrd, a full-node implementation of Decred which
+This package was developed for eacrd, a full-node implementation of Decred which
 is under active development.  Although it was primarily written for
-ecrd, this package has intentionally been designed so it can be used as a
+eacrd, this package has intentionally been designed so it can be used as a
 standalone package for any projects needing the functionality provided.
 
 ## Installation and Updating

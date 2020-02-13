@@ -11,7 +11,7 @@ two main goals:
   (expressed in blocks);
 - Attempting to minimize fees while maintaining be above restriction.
 
-Although it was primarily written for ecrd, this package has intentionally been
+Although it was primarily written for eacrd, this package has intentionally been
 designed so it can be used as a standalone package for any projects needing the
 functionality provided.
 

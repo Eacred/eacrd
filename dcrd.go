@@ -21,7 +21,7 @@ import (
 
 var cfg *config
 
-// winServiceMain is only invoked on Windows.  It detects when ecrd is running
+// winServiceMain is only invoked on Windows.  It detects when eacrd is running
 // as a service and reacts accordingly.
 var winServiceMain func() (bool, error)
 
@@ -31,9 +31,9 @@ var winServiceMain func() (bool, error)
 // service is not running.
 var serviceStartOfDayChan = make(chan *config, 1)
 
-// ecrdMain is the real main function for ecrd.  It is necessary to work around
+// eacrdMain is the real main function for eacrd.  It is necessary to work around
 // the fact that deferred functions do not run when os.Exit() is called.
-func ecrdMain() error {
+func eacrdMain() error {
 	// Load configuration and parse command line.  This function also
 	// initializes logging and configures it accordingly.
 	tcfg, _, err := loadConfig()
@@ -51,21 +51,21 @@ func ecrdMain() error {
 	// triggered either from an OS signal such as SIGINT (Ctrl+C) or from
 	// another subsystem such as the RPC server.
 	ctx := shutdownListener()
-	defer ecrdLog.Info("Shutdown complete")
+	defer eacrdLog.Info("Shutdown complete")
 
 	// Show version and home dir at startup.
-	ecrdLog.Infof("Version %s (Go version %s %s/%s)", version.String(),
+	eacrdLog.Infof("Version %s (Go version %s %s/%s)", version.String(),
 		runtime.Version(), runtime.GOOS, runtime.GOARCH)
-	ecrdLog.Infof("Home dir: %s", cfg.HomeDir)
+	eacrdLog.Infof("Home dir: %s", cfg.HomeDir)
 	if cfg.NoFileLogging {
-		ecrdLog.Info("File logging disabled")
+		eacrdLog.Info("File logging disabled")
 	}
 
 	// Enable http profiling server if requested.
 	if cfg.Profile != "" {
 		go func() {
 			listenAddr := cfg.Profile
-			ecrdLog.Infof("Creating profiling server "+
+			eacrdLog.Infof("Creating profiling server "+
 				"listening on %s", listenAddr)
 			profileRedirect := http.RedirectHandler("/debug/pprof",
 				http.StatusSeeOther)
@@ -81,7 +81,7 @@ func ecrdMain() error {
 	if cfg.CPUProfile != "" {
 		f, err := os.Create(cfg.CPUProfile)
 		if err != nil {
-			ecrdLog.Errorf("Unable to create cpu profile: %v", err.Error())
+			eacrdLog.Errorf("Unable to create cpu profile: %v", err.Error())
 			return err
 		}
 		pprof.StartCPUProfile(f)
@@ -93,7 +93,7 @@ func ecrdMain() error {
 	if cfg.MemProfile != "" {
 		f, err := os.Create(cfg.MemProfile)
 		if err != nil {
-			ecrdLog.Errorf("Unable to create mem profile: %v", err)
+			eacrdLog.Errorf("Unable to create mem profile: %v", err)
 			return err
 		}
 		defer f.Close()
@@ -123,13 +123,13 @@ func ecrdMain() error {
 	lifetimeNotifier.notifyStartupEvent(lifetimeEventDBOpen)
 	db, err := loadBlockDB()
 	if err != nil {
-		ecrdLog.Errorf("%v", err)
+		eacrdLog.Errorf("%v", err)
 		return err
 	}
 	defer func() {
 		// Ensure the database is sync'd and closed on shutdown.
 		lifetimeNotifier.notifyShutdownEvent(lifetimeEventDBOpen)
-		ecrdLog.Infof("Gracefully shutting down the database...")
+		eacrdLog.Infof("Gracefully shutting down the database...")
 		db.Close()
 	}()
 
@@ -144,7 +144,7 @@ func ecrdMain() error {
 	// drops the address index since it relies on it.
 	if cfg.DropAddrIndex {
 		if err := indexers.DropAddrIndex(db, ctx.Done()); err != nil {
-			ecrdLog.Errorf("%v", err)
+			eacrdLog.Errorf("%v", err)
 			return err
 		}
 
@@ -152,7 +152,7 @@ func ecrdMain() error {
 	}
 	if cfg.DropTxIndex {
 		if err := indexers.DropTxIndex(db, ctx.Done()); err != nil {
-			ecrdLog.Errorf("%v", err)
+			eacrdLog.Errorf("%v", err)
 			return err
 		}
 
@@ -160,7 +160,7 @@ func ecrdMain() error {
 	}
 	if cfg.DropExistsAddrIndex {
 		if err := indexers.DropExistsAddrIndex(db, ctx.Done()); err != nil {
-			ecrdLog.Errorf("%v", err)
+			eacrdLog.Errorf("%v", err)
 			return err
 		}
 
@@ -168,7 +168,7 @@ func ecrdMain() error {
 	}
 	if cfg.DropCFIndex {
 		if err := indexers.DropCfIndex(db, ctx.Done()); err != nil {
-			ecrdLog.Errorf("%v", err)
+			eacrdLog.Errorf("%v", err)
 			return err
 		}
 
@@ -181,13 +181,13 @@ func ecrdMain() error {
 		cfg.DataDir, ctx.Done())
 	if err != nil {
 		// TODO(oga) this logging could do with some beautifying.
-		ecrdLog.Errorf("Unable to start server on %v: %v",
+		eacrdLog.Errorf("Unable to start server on %v: %v",
 			cfg.Listeners, err)
 		return err
 	}
 	defer func() {
 		lifetimeNotifier.notifyShutdownEvent(lifetimeEventP2PServer)
-		ecrdLog.Infof("Gracefully shutting down the server...")
+		eacrdLog.Infof("Gracefully shutting down the server...")
 		server.Stop()
 		server.WaitForShutdown()
 		srvrLog.Infof("Server shutdown complete")
@@ -242,7 +242,7 @@ func main() {
 	}
 
 	// Work around defer not working after os.Exit()
-	if err := ecrdMain(); err != nil {
+	if err := eacrdMain(); err != nil {
 		os.Exit(1)
 	}
 }

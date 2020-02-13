@@ -4,7 +4,7 @@
 
 package sampleconfig
 
-// FileContents is a string containing the commented example config for ecrd.
+// FileContents is a string containing the commented example config for eacrd.
 const FileContents = `[Application Options]
 
 ; ------------------------------------------------------------------------------
@@ -13,14 +13,14 @@ const FileContents = `[Application Options]
 
 ; The directory to store data such as the block chain and peer addresses.  The
 ; block chain takes several GB, so this location must have a lot of free space.
-; The default is ~/.ecrd/data on POSIX OSes, $LOCALAPPDATA/Ecrd/data on Windows,
-; ~/Library/Application Support/Ecrd/data on macOS, and $homed/ecrd/data on
+; The default is ~/.eacrd/data on POSIX OSes, $LOCALAPPDATA/Eacrd/data on Windows,
+; ~/Library/Application Support/Eacrd/data on macOS, and $homed/eacrd/data on
 ; Plan9.  Environment variables are expanded so they may be used.  NOTE: Windows
 ; environment variables are typically %VARIABLE%, but they must be accessed with
 ; $VARIABLE here.
-; datadir=~/.ecrd/data                            ; Unix
-; datadir=$LOCALAPPDATA/Ecrd/data                 ; Windows
-; datadir=~/Library/Application Support/Ecrd/data ; macOS
+; datadir=~/.eacrd/data                            ; Unix
+; datadir=$LOCALAPPDATA/Eacrd/data                 ; Windows
+; datadir=~/Library/Application Support/Eacrd/data ; macOS
 
 
 ; ------------------------------------------------------------------------------
@@ -64,7 +64,7 @@ const FileContents = `[Application Options]
 ; upnp=1
 
 ; Specify the external IP addresses your node is listening on.  One address per
-; line.  ecrd will not contact 3rd-party sites to obtain external ip addresses.
+; line.  eacrd will not contact 3rd-party sites to obtain external ip addresses.
 ; This means if you are behind NAT, your node will not be able to advertise a
 ; reachable address unless you specify it here or enable the 'upnp' option (and
 ; have a supported device).
@@ -76,7 +76,7 @@ const FileContents = `[Application Options]
 ;
 ; Only one of the following two options, 'addpeer' and 'connect', may be
 ; specified.  Both allow you to specify peers that you want to stay connected
-; with, but the behavior is slightly different.  By default, ecrd will query DNS
+; with, but the behavior is slightly different.  By default, eacrd will query DNS
 ; to find peers to connect to, so unless you have a specific reason such as
 ; those described below, you probably won't need to modify anything here.
 ;
@@ -133,7 +133,7 @@ const FileContents = `[Application Options]
 ; whitelist=192.168.0.0/24
 ; whitelist=fd00::/16
 
-; Disable DNS seeding for peers.  By default, when ecrd starts, it will use
+; Disable DNS seeding for peers.  By default, when eacrd starts, it will use
 ; DNS to query for available peers to connect with.
 ; nodnsseed=1
 
@@ -172,7 +172,7 @@ const FileContents = `[Application Options]
 
 ; ------------------------------------------------------------------------------
 ; RPC server options - The following options control the built-in RPC server
-; which is used to control and query information from a running ecrd process.
+; which is used to control and query information from a running eacrd process.
 ;
 ; NOTE: The RPC server is disabled by default if no rpcuser or rpcpass is
 ; specified.
@@ -329,7 +329,7 @@ const FileContents = `[Application Options]
 ; Debug logging level.
 ; Valid levels are {trace, debug, info, warn, error, critical}
 ; You may also specify <subsystem>=<level>,<subsystem2>=<level>,... to set
-; log level for individual subsystems.  Use ecrd --debuglevel=show to list
+; log level for individual subsystems.  Use eacrd --debuglevel=show to list
 ; available subsystems.
 ; debuglevel=info
 
@@ -375,7 +375,7 @@ const DcrctlSampleConfig = `[Application Options]
 ; proxypass=
 
 ; Username and password to authenticate connections to a Eacred RPC server
-; (usually ecrd or eacrwallet)
+; (usually eacrd or eacrwallet)
 ; rpcuser=
 ; rpcpass=
 
@@ -386,5 +386,5 @@ const DcrctlSampleConfig = `[Application Options]
 ; walletrpcserver=localhost
 
 ; RPC server certificate chain file for validation
-; rpccert=~/.ecrd/rpc.cert
+; rpccert=~/.eacrd/rpc.cert
 `
